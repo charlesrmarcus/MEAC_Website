@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-    Erik Hansen
     MEAC_Website 
 """
 
