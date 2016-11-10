@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+    Erik Hansen
     MEAC_Website 
 """
 
@@ -65,7 +66,7 @@ def close_db(error):
 @app.route('/')
 def populateIndexPage():
     db = get_db()
-    cur = db.execute('select title, text from entries order by id desc')
+    cur = db.execute('select title, text, page from entries order by id desc, where page == \'index\' ')
     entries = cur.fetchall()
     return render_template('index.html', entries=entries)
 
@@ -84,23 +85,24 @@ def populateIndexPage():
 @app.route('/admin', methods=['GET', 'POST'])
 def adminPage():
     if request.method == 'POST':
-        # submit the edited text fields
-        request.form['']
-        
         db = get_db()
-        db.execute('insert into entries (title, text) values (?, ?)', [request.form['title'], request.form['text']])
+        for fields in request.form:
+            db.execute('update entries set text = ? where page = ? and title = ?', [fields['text'], fields['page'], fields['title']])
         db.commit()
         return redirect(url_for('populateIndexPage'))
     elif request.method == 'GET':
         # retrieve all fields from db and populate admin page
         db = get_db()
-        cur = db.execute('select title, text from entries order by id desc')
+        cur = db.execute('select page, title, text from entries order by page, title desc')
         entries = cur.fetchall()
 
+        # potentially store in a dict for lookup capabilities
+        # need to store by page so we can cluster the fields
 
         return render_template('admin.html', entries=entries)
     else:
-        error = 'improper method'
+        # error = 'improper method'
+        abort(401)
 
 
 @app.route('/login', methods=['GET', 'POST'])
