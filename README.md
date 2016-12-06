@@ -7,4 +7,3 @@
 <br>
 <br>
 
-![got tha coffee](http://25.media.tumblr.com/b372a069bb880375d1b32b63a966e38b/tumblr_mukmk4rXzy1s80ppfo1_250.gif)
