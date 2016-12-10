@@ -1,5 +1,3 @@
-![MEAC](http://imgur.com/a/TQbSv)
-<br>
 # MEAC_Website
 <br>
 <br>
