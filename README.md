@@ -1,5 +1,8 @@
+![MEAC](http://imgur.com/a/TQbSv)
+<br>
 # MEAC_Website
-
+<br>
+<br>
 ### Don't forget to unzip and rezip the images folder
 [MEAC_Website\MEAC_Website\MEAC_Website\static\images.zip](https://github.com/ehansen31/MEAC_Website/blob/Working/MEAC_Website/MEAC_Website/static/images.zip)
 
