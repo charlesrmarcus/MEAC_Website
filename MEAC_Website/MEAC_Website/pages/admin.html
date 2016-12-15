@@ -1,16 +1,18 @@
 {% extends "layout.html" %} 
 {% block body %} 
     {% if session.logged_in %}
-        <form>
+        <form action="{{ url_for('login') }}" method="post">
             <dl>
-                {% for entry in entries %}
+                {% for page in entries[:, 0] %}
                     <dt>Page:
-                    <dd><label>{{entry.Page}}</label>
-                    <dt>Title:
-                    <dd><input type="text" size="30" name="title" value="{{entry.Title}}">
-                    <dt>Text:
-                    <dd><textarea name="text" rows="5" cols="40">{{entry.Text}}</textarea>
-                    
+                    <dd><label>{{page}}</label>
+                    {% for entry in entries[page] %}
+                        <dt>Title:
+                        <dd><label name="title" value="{{entry.Title}}">
+                        <dt>Text:
+                        <dd><textarea name="{{page+':'+entry.Title}}" rows="5" cols="40">{{entry.Text}}</textarea>
+                        
+                    {% endfor %}
                 {% endfor %}
                 <dd><input type="submit" value="Save">
             </dl>
