@@ -1,6 +1,5 @@
 drop table if exists entries;
 create table entries (
-  -- id integer primary key autoincrement,
   page text not null,
   title text not null,
   'text' text not null,
@@ -9,6 +8,37 @@ create table entries (
 );
 
 -- need to populate the entries with all the fields that need to be edited
-insert into entries (title, page)
-values ("index", "paragraph"), ("about", "employees");
+insert into entries (page, title)
+values 
+  -- home page
+  ("home", "title"),
+
+  -- about page
+  ("about", "title"),
+
+  -- contact page
+  ("contact", "title"),
+
+  -- events page
+  ("events", "title"),
+
+  -- gethelp page
+  ("gethelp", "title"),
+
+  -- getinvolved page
+  ("getinvolved", "title"),
+
+  -- history page
+  ("history", "title"),
+
+  -- meettheteam page
+  ("meettheteam", "title"),
+
+  -- supporters page
+  ("supporters", "title"),
+
+  -- whatshappening page
+  ("whatshappening", "title")
+
+;
 
