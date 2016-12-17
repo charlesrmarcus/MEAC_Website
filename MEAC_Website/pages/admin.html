@@ -1,0 +1,15 @@
+<form action="{{ url_for('adminPage') }}" method="post">
+    <dl>
+        {% for page in pages %}
+            <dt>Page:
+            <dd><label>{{ page }}</label>
+                {% for entry in data[page] %}
+                    <dt>Title:
+                    <dd><label>{{ entry[0] }}</label>
+                    <dt>Text:
+                    <dd><textarea name="{{ page + ':' + entry[0]}}" rows="5" cols="40">{{ entry[1] }}</textarea>
+                {% endfor %}
+        {% endfor %}
+        <dd><input type="submit" value="Save">
+    </dl>
+</form>
