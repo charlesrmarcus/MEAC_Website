@@ -1,0 +1,19 @@
+{% extends "layout.html" %} 
+{% block body %} 
+    {% if session.logged_in %}
+        <form>
+            <dl>
+                {% for entry in entries %}
+                    <dt>Page:
+                    <dd><label>{{entry.Page}}</label>
+                    <dt>Title:
+                    <dd><input type="text" size="30" name="title" value="{{entry.Title}}">
+                    <dt>Text:
+                    <dd><textarea name="text" rows="5" cols="40">{{entry.Text}}</textarea>
+                    
+                {% endfor %}
+                <dd><input type="submit" value="Save">
+            </dl>
+        </form>
+    {% endif %}
+{% endblock %}
