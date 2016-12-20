@@ -1,14 +1,18 @@
 drop table if exists entries;
 create table entries (
-  -- id integer primary key autoincrement,
   page text not null,
-  title text not null,
-  'text' text not null,
+  field text not null,
+  'text' text,
   -- compound primary key for page and title
-  primary key (page, title)
+  primary key (page, field)
 );
 
--- need to populate the entries with all the fields that need to be edited
-insert into entries (title, page)
-values ("index", "paragraph"), ("about", "employees");
+
+
+insert into entries (page, field, text) values ("home", "title", "example title text");
+insert into entries (page, field, text) values ("home", "description", "example description text");
+
+insert into entries (page, field, text) values ("about", "title", "About Us");
+
+
 
