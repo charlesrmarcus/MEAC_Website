@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 """
     Erik Hansen
-    MEAC_Website
+    MEAC_Website 
 """
 
 import os
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
-    render_template, flash
-from collections import defaultdict
+     render_template, flash
 
-app = Flask(__name__, template_folder='pages')
+
+app = Flask(__name__, template_folder=pages)
+
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
     DATABASE=os.path.join(app.root_path, 'MEAC_Website.db'),
-    DEBUG=False,
+    DEBUG=True,
     SECRET_KEY='development key',
     USERNAME='admin',
     PASSWORD='default'
@@ -59,36 +60,49 @@ def close_db(error):
     """Closes the database again at the end of the request."""
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
+#-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+@app.route('/')
+def populateIndexPage():
+    db = get_db()
+    cur = db.execute('select title, text, page from entries order by id desc, where page == \'index\' ')
+    entries = cur.fetchall()
+    return render_template('index.html', entries=entries)
 
+
+# @app.route('/add', methods=['POST'])
+# def add_entry():
+#     if not session.get('logged_in'):
+#         abort(401)
+#     db = get_db()
+#     db.execute('insert into entries (title, text) values (?, ?)',
+#                [request.form['title'], request.form['text']])
+#     db.commit()
+#     flash('New entry was successfully posted')
+#     return redirect(url_for('populateIndexPage'))
 
 @app.route('/admin', methods=['GET', 'POST'])
 def adminPage():
-    # if not session.get('logged_in'):
-    #     abort(401)
     if request.method == 'POST':
-        compoundKeys = []
-        for field in request.form:
-            compoundKeys.append((request.form[field], field.split(':')[0], field.split(':')[1]))
         db = get_db()
-        for line in compoundKeys:
-            db.execute('UPDATE entries SET text = ? WHERE page = ? AND field = ?', [line[0], line[1], line[2]])
+        for fields in request.form:
+            db.execute('update entries set text = ? where page = ? and title = ?', [fields['text'], fields['page'], fields['title']])
         db.commit()
         return redirect(url_for('populateIndexPage'))
     elif request.method == 'GET':
+        # retrieve all fields from db and populate admin page
         db = get_db()
-        cur = db.execute('SELECT page, field, text FROM entries ORDER BY page, field DESC')
+        cur = db.execute('select page, title, text from entries order by page, title desc')
         entries = cur.fetchall()
-        cur.close()
-        pages = []
-        data = defaultdict(list)
-        for entry in entries:
-            if entry["page"] not in pages:
-                pages.append(entry["page"])
-            data[entry["page"]].append((entry["field"], entry["text"]))
-        return render_template('admin.html', data=data, pages=pages)
+
+        # potentially store in a dict for lookup capabilities
+        # need to store by page so we can cluster the fields
+
+        return render_template('admin.html', entries=entries)
+    else:
+        # error = 'improper method'
+        abort(401)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -102,7 +116,7 @@ def login():
         else:
             session['logged_in'] = True
             flash('You were logged in')
-            return redirect(url_for('adminPage'))
+            return redirect(url_for('populateIndexPage'))
     return render_template('login.html', error=error)
 
 
@@ -112,86 +126,3 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('populateIndexPage'))
 
-
-# @app.route('/')
-# def populateHomePage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC WHERE page == \'home\' ')
-#     entries = cur.fetchall()
-#     return render_template('home.html', entries=entries)
-#
-#
-@app.route('/about')
-def populateAboutPage():
-    db = get_db()
-    cur = db.execute('SELECT field, text, page FROM entries WHERE page == \'about\' ORDER BY field DESC')
-    entries = cur.fetchall()
-    return render_template('about.html', entries=entries)
-
-#
-# @app.route('/contact')
-# def populateContactPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'contact\' ')
-#     entries = cur.fetchall()
-#     return render_template('index.html', entries=entries)
-#
-#
-# @app.route('/events')
-# def populateEventsPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'events\' ')
-#     entries = cur.fetchall()
-#     return render_template('events.html', entries=entries)
-#
-#
-# @app.route('/get_help')
-# def populateGetHelpPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'gethelp\' ')
-#     entries = cur.fetchall()
-#     return render_template('get_help.html', entries=entries)
-#
-#
-# @app.route('/get_involved')
-# def populateGetInvolvedPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'getinvolved\' ')
-#     entries = cur.fetchall()
-#     return render_template('get_involved.html', entries=entries)
-#
-#
-# @app.route('/history')
-# def populateHistoryPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'history\' ')
-#     entries = cur.fetchall()
-#     return render_template('history.html', entries=entries)
-#
-#
-# @app.route('/meet_the_team')
-# def populateMeetTheTeamPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'meettheteam\' ')
-#     entries = cur.fetchall()
-#     return render_template('meet_the_team.html', entries=entries)
-#
-#
-# @app.route('/supporters')
-# def populateSupportersPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'supporters\' ')
-#     entries = cur.fetchall()
-#     return render_template('supporters.html', entries=entries)
-#
-#
-# @app.route('/whats_happening')
-# def populateWhatsHappeningPage():
-#     db = get_db()
-#     cur = db.execute('SELECT field, text, page FROM entries ORDER BY field DESC, WHERE page == \'whatshappening\' ')
-#     entries = cur.fetchall()
-#     return render_template('whats_happening.html', entries=entries)
-
-
-if __name__ == '__main__':
-    app.run()
