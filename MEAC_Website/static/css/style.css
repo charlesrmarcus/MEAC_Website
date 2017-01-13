@@ -9,17 +9,13 @@
 /* =============================================================================
   Base
 ========================================================================== */
-html {
+html, body {
   height: 100%;
 }
 
 body {
   font-family: "Open sans", sans-serif;
   color: #008a8d;
-  position: relative;
-  margin: 0;
-  padding-bottom: 15rem;
-  min-height: 100%;
 }
 
 h1,
@@ -357,10 +353,6 @@ a:hover, a:focus, a:active {
 .main-footer {
   background: #008a8d;
   color: #fffF;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 .main-footer .footer-main {
  padding: 10px 0;
@@ -439,7 +431,17 @@ a:hover, a:focus, a:active {
   /*margin-bottom: 50px;*/
   background-color: #ffffff;
 }
- 
+
+.wrapper { /* if the footer height changes the responsive section must also be updated */
+  min-height: 100%;
+  margin: 0 auto -117px; /* the bottom margin is the negative value of the footer's height */
+}
+
+footer, .push { /* if the footer height changes the responsive section must also be updated */
+  height: 117px; /* .push must be the same height as footer */
+  clear: both; 
+}
+
   
 /* Pages/Gallery 
 ================================= */
@@ -793,8 +795,8 @@ form .alert {
     padding: 25px;
   }
 }
-/* Medium devices (desktops, 992px and Donw) */
-@media (max-width: 992px) {
+/* Medium devices (desktops, 991px and Down) */
+@media (max-width: 991px) {
   .carousel-home .carousel-title {
     font-size: 36px;
   }
@@ -819,6 +821,15 @@ form .alert {
 
   .footer-col {
     margin-bottom: 0px;
+  } 
+
+  .wrapper {
+    min-height: 100%;
+	margin: 0 auto -263px; /* the bottom margin is the negative value of the footer's height */
+  }
+
+  footer, .push {
+    height: 263px; /* .push must be the same height as .footer */
   }
 }
 /* Small devices (tablets, 768px and Down) */
@@ -1256,9 +1267,10 @@ li img:hover {
 
 .myBox {
 margin: 0 auto;	
-border: 2px solid #008a8d;
+border: 1px solid #008a8d;
 padding: ;
-font: 24px/36px sans-serif;
+font-size: 26px;
+font-family: "Dosis", sans-serif;
 width: 460px;
 height: 200px;
 overflow-Y: scroll;
@@ -1273,7 +1285,8 @@ padding: 25px;
 text-align: center;
 background-color: #008a8d;
 margin: 0 auto;	
-font: 16px/28px sans-serif;
+font-size: 16px;
+font-family: "Dosis", sans-serif;
 color: #fff;
 overflow-Y: scroll;
 position: center;
@@ -1285,7 +1298,8 @@ padding: 25px;
 text-align: center;
 background-color: #72c038;
 margin: 0 auto;	
-font: 16px/28px sans-serif;
+font-size: 16px;
+font-family: "Dosis", sans-serif;
 color: #fff;
 overflow-Y: scroll;
 position: center;
