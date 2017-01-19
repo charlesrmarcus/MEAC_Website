@@ -1237,16 +1237,19 @@ section#timeline article:nth-child(5) div.inner h2:after {
 }
 
 
-div.supporters {
-  width: 1000px;
-  margin: 0 auto;
-  overflow: auto;
+div.supporters_left {
+
+  float: left;
 }
  
-ul.supporters {
-  list-style-type: none;
+div.supporters_right {
+ 
+  float: right;
 }
 
+div.supporters_center {
+    text-align: center;
+}
 
 li img {
   float: Left;

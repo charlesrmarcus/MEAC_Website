@@ -79,55 +79,17 @@ def adminPage():
         return redirect(url_for('populateIndexPage'))
     elif request.method == 'GET':
         db = get_db()
-        cur = db.execute('SELECT id from pages')
-        pages = cur.fetchall()
-
-        data = {}
-
-        for page in pages:
-            page_data = {}
-
-            # get entries
-            cur = db.execute('SELECT * FROM entries where entries.page = ?', [page['id']])
-            entries = cur.fetchall()
-            page_data['entries'] = entries
-
-            # get images
-            cur = db.execute('SELECT * FROM images where images.page = ? ORDER BY id DESC', [page['id']])
-            images = cur.fetchall()
-            page_data['images'] = images
-
-            # get files
-            cur = db.execute('SELECT * FROM files where files.page = ? ORDER BY id DESC', [page['id']])
-            files = cur.fetchall()
-            page_data['files'] = files
-
-            # get flags
-            cur = db.execute('SELECT * FROM flags where flags.page = ? ORDER BY id DESC', [page['id']])
-            flags = cur.fetchall()
-            page_data['flags'] = flags
-
-
-            data[page['id']] = page_data
+        cur = db.execute('SELECT page, field, text FROM entries ORDER BY page, field DESC')
+        entries = cur.fetchall()
         cur.close()
-
+        pages = []
+        data = defaultdict(list)
+        for entry in entries:
+            if entry["page"] not in pages:
+                pages.append(entry["page"])
+            data[entry["page"]].append((entry["field"], entry["text"]))
         return render_template('admin.html', data=data, pages=pages)
 
-def get_entries():
-
-    return True
-
-def get_images():
-
-    return True
-
-def get_flags():
-
-    return True
-
-def get_files():
-
-    return True
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
