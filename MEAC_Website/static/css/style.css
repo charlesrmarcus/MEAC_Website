@@ -1160,9 +1160,9 @@ section#timeline article div.inner span.date {
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-  background: #f4b00f;
+  background: #B3B2B1;
   color: #000000;
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 0px solid rgba(255,255,255,0.2);
   box-shadow: 0 0 0 4px #000000;
 }
 section#timeline article div.inner span.date span {
