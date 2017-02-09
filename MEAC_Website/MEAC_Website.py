@@ -9,6 +9,7 @@ from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
 from collections import defaultdict
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__, template_folder='pages')
 
@@ -129,18 +130,37 @@ def get_files():
 
     return True
 
+"""Password Hashing and Salting for Database Storage"""
+class User(object):
+    def __init__(self, username, password):
+        self.username = username
+        self.set_password(password)
+        
+    def set_password(self, password):
+        self.pw_hash = generate_password_hash(password)
+        
+    def check_password(self, password):
+        return check_password_hash(self.pw_hash, password)
+
+
+    
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
+    currentUser = User('username', 'password')
+    hashed_password = currentUser.pw_hash
+    """New Security Constraint with Password"""
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
+        #if request.form['username'] != app.config['USERNAME']:
+        if currentUser.check_password('password') == False:
             error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
+        #elif request.form['password'] != app.config['PASSWORD']:
+        #elif check_password('password') == True:
+        #    error = 'Invalid password'
         else:
             session['logged_in'] = True
             flash('You were logged in')
-            return redirect(url_for('adminPage'))
+            return redirect(url_for('populateVolunteerPage'))
     return render_template('login.html', error=error)
 
 
@@ -159,12 +179,20 @@ def logout():
 #     return render_template('home.html', entries=entries)
 #
 #
+
 @app.route('/about')
 def populateAboutPage():
     db = get_db()
     cur = db.execute('SELECT field, text, page FROM entries WHERE page == \'about\' ORDER BY field DESC')
     entries = cur.fetchall()
     return render_template('about.html', entries=entries)
+
+@app.route('/protected_content')
+def populateVolunteerPage():
+	db = get_db()
+	cur = db.execute('SELECT field, text, page FROM entries WHERE page == \'about\' ORDER BY field DESC')
+	entries = cur.fetchall()
+	return render_template('protected_content.html', entries=entries)
 
 #
 # @app.route('/contact')
