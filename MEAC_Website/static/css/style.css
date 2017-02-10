@@ -226,7 +226,7 @@ a:hover, a:focus, a:active {
 }
 .about-us-col .col-details {
   text-align: center-left;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   min-height: 80px;
 }
 
@@ -323,7 +323,7 @@ a:hover, a:focus, a:active {
   font-weight: bold;
 }
 .cause .cause-details {
-  text-align: justify;
+  /*text-align: justify;*/
   padding: 0 15px;
   font-size: 13px;
   margin-bottom: 15px;
@@ -618,6 +618,10 @@ form .alert {
 .table-style-1 td,
 .table-style-1 th {
   border-bottom: 1px solid #008a8d;
+}
+
+.td-phone {
+  width: 130px;
 }
 
 .table-style-2 thead {
@@ -1150,7 +1154,7 @@ section#timeline article div.inner {
 section#timeline article div.inner span.date {
   display: block;
   width: 60px;
-  height: 50px;
+  height: 60px;
   padding: 5px 0;
   position: absolute;
   top: 0;
@@ -1163,7 +1167,7 @@ section#timeline article div.inner span.date {
   background: #B3B2B1;
   color: #000000;
   border: 0px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 0 4px #000000;
+  box-shadow: 0 0 0 3px #000000;
 }
 section#timeline article div.inner span.date span {
   display: block;
@@ -1172,6 +1176,7 @@ section#timeline article div.inner span.date span {
 section#timeline article div.inner span.date span.year {
   font-size: 20px;
   position: center;
+  padding-top: 10px;
 }
 section#timeline article div.inner h2 {
   padding: 15px;
@@ -1280,28 +1285,19 @@ li img:hover {
   box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
 }
 
-.myBox {
-margin: 0 auto;	
-border: 1px solid #008a8d;
-/*padding: ;*/
-font-size: 26px;
-font-family: "Dosis", sans-serif;
-width: 460px;
-height: 200px;
-overflow-Y: scroll;
-position: center;
-text-align: center;
-background: #fff; 
+.box {
+  padding: 10px 10px 25px 10px;
+  text-align: center;
+  background-color: #008a8d;
+  margin: 0 auto;	
+  font-size: 16px;
+  font-family: "Dosis", sans-serif;
+  color: #fff;
+  margin: 0 0 17px 0;
 }
 
-.myBox-contact {
-padding: 10px 10px 25px 10px;
-text-align: center;
-background-color: #008a8d;
-margin: 0 auto;	
-font-size: 16px;
-font-family: "Dosis", sans-serif;
-color: #fff;
+.box-text {
+  padding: 0 5px 0 5px;
 }
 
 .iframe {	
