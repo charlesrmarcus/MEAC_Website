@@ -358,7 +358,7 @@ a:hover, a:focus, a:active {
 ================================= */
 .footer-top {
   background: #72c038;
-  height: 8px;
+  height: 5px;
 }
 
 .main-footer {
@@ -366,7 +366,7 @@ a:hover, a:focus, a:active {
   color: #ffffff;
 }
 .main-footer .footer-main {
- padding: 10px 0;
+ padding: 5px 0;
   
 }
 .main-footer .footer-title {
@@ -445,11 +445,11 @@ a:hover, a:focus, a:active {
 
 .wrapper { /* if the footer height changes the responsive section must also be updated */
   min-height: 100%;
-  margin: 0 auto -117px; /* the bottom margin is the negative value of the footer's height */
+  margin: 0 auto -72px; /* the bottom margin is the negative value of the footer's height */
 }
 
 footer, .push { /* if the footer height changes the responsive section must also be updated */
-  height: 117px; /* .push must be the same height as footer */
+  height: 72px; /* .push must be the same height as footer */
   clear: both; 
 }
 
@@ -838,14 +838,6 @@ form .alert {
     margin-bottom: 0px;
   } 
 
-  .wrapper {
-    min-height: 100%;
-	margin: 0 auto -263px; /* the bottom margin is the negative value of the footer's height */
-  }
-
-  footer, .push {
-    height: 263px; /* .push must be the same height as .footer */
-  }
 }
 /* Small devices (tablets, 768px and Down) */
 @media (max-width: 768px) {
@@ -911,6 +903,15 @@ form .alert {
   .partner-logo {
     width: 280px;
   }
+
+  .wrapper {
+    min-height: 100%;
+	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
+  }
+
+  footer, .push {
+    height: 90px; /* .push must be the same height as .footer */
+  }
 }
 /* Extra Small devices (tablets, 480px and Down) */
 @media (max-width: 480px) {
@@ -924,6 +925,15 @@ form .alert {
   }
   .carousel-home .carousel-indicators {
     bottom: 0;
+  }
+
+  .wrapper {
+    min-height: 110%;
+	margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
+  }
+
+  footer, .push {
+    height: 110px; /* .push must be the same height as .footer */
   }
 }
 /* =============================================================================
@@ -1345,7 +1355,7 @@ li img:hover {
 
 .logo-img {
   float:left;
-  margin-left:10px
+  margin-left:10px;
 }
 
 .partner-logo {
