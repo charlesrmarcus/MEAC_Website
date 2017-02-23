@@ -32,22 +32,7 @@
 <!-- NAVBAR ================================================== -->
 
     <header class="main-header">
-        
         <nav class="navbar navbar-static-top">
-
-            <div class="navbar-top">
-            	<div class="container">
-                	<div class="row">
-                    	<div class="col-sm-6 col-xs-12">   
-                    	</div>
-                    	<div class="col-sm-6 col-xs-12 text-right">
-                        	<ul class="list-unstyled list-inline header-social">
-                            	<li> <a href="#" target="_blank"> <i class="fa fa-facebook"></i> </a> </li>
-                       		</ul> <!-- /.header-social  -->
-                    	</div>
-                  	</div>
-              	</div>
-            </div>
 
             <div class="navbar-main">
             	<div class="container">
@@ -60,29 +45,30 @@
                     		<span class="icon-bar"></span>
                   		</button>
                   		<a class="" href="home.html">
-                  			<img src="../static/images/MeacLogoOfficialWhiteTextVector.png" alt="MEAC Logo" class="logo-img"> 
+                  			<img src="../static/images/MeacLogoOfficialWhiteTextVector.svg" alt="MEAC Logo" class="logo-img"> 
                   		</a>
                 	</div>
 
                 	<div id="navbar" class="navbar-collapse collapse pull-right">
                   		<ul class="nav navbar-nav">
                     		<li><a href="home.html">Home</a></li>
-                    		<li><a class="is-active" href="get_involved.html">Get Involved</a></li>
+                    		<li><a class="is-active" href="get_involved.html">Get Involved</a>
+								<ul class="submenu">
+						 			<li><a href="get_involved_financial.html">Financial Gifts</a></li>
+                         			<li><a href="get_involved_products.html">Product Donations</a></li>
+                         			<li><a href="get_involved_volunteer.html">Volunteer</a></li>
+									<li><a href="event_calendar.html">Event Calendar</a></li>
+                      			</ul>
+							</li>
                     		<li class="has-child"><a href="about.html">About</a>
                       			<ul class="submenu">
-                        			<li class="submenu-item"><a href="about.html">About MEAC</a></li>
-						 			<li class="submenu-item"><a href="history.html">History</a></li>
-                         			<li class="submenu-item"><a href="supporters.html">Supporters </a></li>
-                         			<li class="submenu-item"><a href="meet_the_team.html">Meet the Team</a></li>
-                         			<li class="submenu-item"><a href="contact.html">Contact Us</a></li>
+						 			<li><a href="history.html">History</a></li>
+                         			<li><a href="supporters.html">Supporters </a></li>
+                         			<li><a href="meet_the_team.html">Meet the Team</a></li>
+                         			<li><a href="contact.html">Contact Us</a></li>
                       			</ul>
                     		</li>
-					 		<li class="has-child"><a href="whats_happening.html">What's Happening</a>
-                      			<ul class="submenu">
-						 			<li class="submenu-item"><a href="whats_happening.html">What's Happening</a></li>
-                         			<li class="submenu-item"><a href="event_calendar.html">Event Calendar</a></li>
-                      			</ul>
-                    		</li>
+					 		<li class="has-child"><a href="impact.html">Our Impact</a></li>
                     		<li><a href="get_help.html">Get Help</a></li>
                   		</ul>
                 	</div> <!-- /#navbar -->
@@ -91,7 +77,6 @@
             </div> <!-- /.navbar-main -->
 
         </nav> 
-
     </header> <!-- /. main-header -->
 
 <!-- MAIN CONTENT ================================================== -->
@@ -105,118 +90,75 @@
 				<br/>
 			</div>
 	
-			<p>Everyday, with every donation and with every client, MEAC's mission is to change lives. 
+			<p class="page-description text-center">Everyday, with every donation and with every client, MEAC's mission is to change lives. 
 				There's no limit to what can be achieved and no reason to think small. For Madisonville 
 				and the surrounding areas, the only way is forward. Come with us.
 			</p>
+			<hr>
+			<div class="section-home about-us fadeIn animated">
+				<div class="container">
+					<div class="row">
 
-			<h2 class="title-style-2">Financial Contributions<span class="title-under"></span></h2>
-			<p>The Madisonville Education and Assistance Center believes in the pure potential behind every 
-				act of giving. By giving direct aid to the residents of the 45227 zip code, MEAC raises up 
-				households one at a time.
-			</p>
-			<p>We graciously accept monetary donations to help support the work of the organization. You may 
-				send a check made payable to MEAC to 4600 Erie Avenue, Cincinnati, OH 45227. You may also 
-				make an online donation via credit card by clicking on the button below.
-			</p><br>
-			<a href="https://co.clickandpledge.com/Default.aspx?WID=58159" target="_blank"><img 
-				title="Online Donation System by ClickandPledge" 
-				src="../static/images/donate/Donate_button.png"
-				alt="Online Donation System by ClickandPledge" width="191" height="auto"></a>
-			<br><br>
-			<p>You can also support MEAC financially in the following ways:</p>
-			<ul>
-				<li class="list">Goodsearch: more info...</li>
-				<li class="list">Kroger Community Rewards Program: more info...</li>
-				<li class="list">AmazonSmile: more info...</li>
-			</ul>
-			<br>
+						<div class="col-md-3 col-sm-6">
+							<div class="about-us-col about-us-green">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-money" style="font-size:72px;color:white"></i>
+									<!--<img src="../static/images/icons/make-donation-icon.png" alt="">-->
+								</div>
+								<h3 class="col-title">Financial Gifts</h3>
+								<div class="col-details">
+									<p>[Needs content]</p>
+								</div>
+								<a href="get_involved_financial.html" target="_blank" class="btn btn-about-1">Learn More</a>
+							</div>
+						</div>				
 
-			<h2 class="title-style-2">Volunteer<span class="title-under"></span></h2>
-			<p>MEAC also has a variety of volunteer opportunities and we'd love for you to help! These include:</p>
-			<ul>
-				<li>Answer telephones during business hours</li>
-				<li>Work in the MEAC Marketplace</li>
-				<li>Provide food and help serve a meal on Monday nights</li>
-				<li>Provide fun time (arts-n-crafts, storytime, etc.) for children during our community meal</li>
-				<li>Volunteer during special client and fundraising events throughout the year</li>
-				<li>Run errands on an as-needed basis</li>
-			</ul>
-			<br/>
-
-			<h2 class="title-style-2">Product Donations<span class="title-under"></span></h2>
-			<p>We are currently in need of the following items:</p><br>
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					    		MEAC Marketplace
-					    	</a>
-						</h4>
-					</div>
-					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-						<div class="panel-body">
-							<ul>
-								<li>Cereal</li>
-								<li>Canned fruit (mandarin oranges and pineapple)</li>
-								<li>Canned tuna</li>
-								<li>Canned salmon</li>
-								<li>Canned chicken</li>
-								<li>Spam</li>
-								<li>Canned or powdered milk</li>
-								<li>Deodorant</li>
-								<li>Shampoo</li>
-								<li>Body soap</li>
-								<li>Feminine hygiene products</li>
-								<li>Razors</li>
-								<li>Toilet paper</li>
-								<li>Paper towels</li>
-								<li>Facial tissue</li>
-								<li>Laundry detergent</li>
-								<li>Dish detergent</li>
-							</ul>
+						<div class="col-md-3 col-sm-6">
+							<div class="about-us-col about-us-teal">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-archive" style="font-size:72px;color:white"></i>
+									<!--<img src="../static/images/icons/programs-icon.png" alt="">-->
+								</div>
+								<h3 class="col-title">Product Donations</h3>
+								<div class="col-details">
+									<p>[Needs content]</p>
+								</div>
+								<a href="get_involved_products.html" class="btn btn-about-2">Learn More</a>
+							</div>
 						</div>
+
+						<div class="col-md-3 col-sm-6">
+							<div class="about-us-col about-us-green">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-child" style="font-size:72px;color:white"></i>
+									<!--<img src="../static/images/icons/our-mission-icon.png" alt="">-->
+								</div>
+								<h3 class="col-title">Volunteer</h3>
+								<div class="col-details">
+									<p>[Needs content]</p>
+								</div>
+								<a href="get_involved_volunteer" class="btn btn-about-1">Learn More</a>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6">
+							<div class="about-us-col about-us-teal">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-calendar" style="font-size:72px;color:white"></i>
+									<!--<img src="../static/images/icons/help-icon.png" alt="">-->
+								</div>
+								<h3 class="col-title">Event Calendar</h3>
+								<div class="col-details">
+									<p>[Needs content]</p>
+								</div>
+								<a href="event_calendar.html" class="btn btn-about-2">Learn More</a>
+							</div>
+						</div>
+						
 					</div>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingTwo">
-						<h4 class="panel-title">
-					    	<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Clothing
-					    	</a>
-						</h4>
-					</div>
-					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-						<div class="panel-body">
-							<ul>
-								<li>Clothing for men, women and children – all sizes</li>
-								<li>Underwear – all sizes</li>
-								<li>Socks – all sizes</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingThree">
-						<h4 class="panel-title">
-					    	<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								Miscellaneous Items
-					    	</a>
-						</h4>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-						<div class="panel-body">
-							<ul>
-								<li>Curtains</li>
-								<li>Bedding</li>
-								<li>Small appliances</li>
-								<li>Plastic and paper bags shopping bags</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			</div> <!-- /.about-us -->
+
 			<br>
 		</div> <!-- /.container -->
 	</div> <!-- /.main-container  -->
@@ -234,11 +176,13 @@
 					<div class="footer-content">
 						<p class="text-center">© Madisonville Education and Assistance Center 2017</p>
 						<p class="text-center">4600 Erie Avenue, Cincinnati, OH 45227 | <a href="tel:5132715501">(513) 271-5501</a> | TEST@TEST.COM</p>
+						<ul class="list-unstyled list-inline text-center">
+							<li> <a href="#" target="_blank"> <i class="fa fa-facebook-official"></i> </a> </li>
+						</ul>
 					</div> 
                     <div class="clearfix"></div>
-                    
-                </div> <!-- .row -->
-            </div> <!-- .container -->
+                </div>
+			</div> <!-- .container -->
         </div> <!-- .footer-main -->
         <!--<div class="footer-bottom"></div>-->
     </footer> <!-- main-footer -->

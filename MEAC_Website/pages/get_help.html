@@ -32,22 +32,7 @@
 <!-- NAVBAR ================================================== -->
 
     <header class="main-header">
-        
         <nav class="navbar navbar-static-top">
-
-            <div class="navbar-top">
-            	<div class="container">
-                	<div class="row">
-                    	<div class="col-sm-6 col-xs-12">   
-                    	</div>
-                    	<div class="col-sm-6 col-xs-12 text-right">
-                        	<ul class="list-unstyled list-inline header-social">
-                            	<li> <a href="#" target="_blank"> <i class="fa fa-facebook"></i> </a> </li>
-                       		</ul> <!-- /.header-social  -->
-                    	</div>
-                  	</div>
-              	</div>
-            </div>
 
             <div class="navbar-main">
             	<div class="container">
@@ -60,29 +45,30 @@
                     		<span class="icon-bar"></span>
                   		</button>
                   		<a class="" href="home.html">
-                  			<img src="../static/images/MeacLogoOfficialWhiteTextVector.png" alt="MEAC Logo" class="logo-img"> 
+                  			<img src="../static/images/MeacLogoOfficialWhiteTextVector.svg" alt="MEAC Logo" class="logo-img"> 
                   		</a>
                 	</div>
 
                 	<div id="navbar" class="navbar-collapse collapse pull-right">
                   		<ul class="nav navbar-nav">
                     		<li><a href="home.html">Home</a></li>
-                    		<li><a href="get_involved.html">Get Involved</a></li>
+                    		<li><a href="get_involved.html">Get Involved</a>
+								<ul class="submenu">
+						 			<li><a href="get_involved_financial.html">Financial Gifts</a></li>
+                         			<li><a href="get_involved_products.html">Product Donations</a></li>
+                         			<li><a href="get_involved_volunteer.html">Volunteer</a></li>
+									<li><a href="event_calendar.html">Event Calendar</a></li>
+                      			</ul>
+							</li>
                     		<li class="has-child"><a href="about.html">About</a>
                       			<ul class="submenu">
-                        			<li class="submenu-item"><a href="about.html">About MEAC</a></li>
-						 			<li class="submenu-item"><a href="history.html">History</a></li>
-                         			<li class="submenu-item"><a href="supporters.html">Supporters </a></li>
-                         			<li class="submenu-item"><a href="meet_the_team.html">Meet the Team</a></li>
-                         			<li class="submenu-item"><a href="contact.html">Contact Us</a></li>
+						 			<li><a href="history.html">History</a></li>
+                         			<li><a href="supporters.html">Supporters </a></li>
+                         			<li><a href="meet_the_team.html">Meet the Team</a></li>
+                         			<li><a href="contact.html">Contact Us</a></li>
                       			</ul>
                     		</li>
-					 		<li class="has-child"><a href="whats_happening.html">What's Happening</a>
-                      			<ul class="submenu">
-						 			<li class="submenu-item"><a href="whats_happening.html">What's Happening</a></li>
-                         			<li class="submenu-item"><a href="event_calendar.html">Event Calendar</a></li>
-                      			</ul>
-                    		</li>
+					 		<li class="has-child"><a href="impact.html">Our Impact</a></li>
                     		<li><a class="is-active" href="get_help.html">Get Help</a></li>
                   		</ul>
                 	</div> <!-- /#navbar -->
@@ -91,7 +77,6 @@
             </div> <!-- /.navbar-main -->
 
         </nav> 
-
     </header> <!-- /. main-header -->
 
 <!-- MAIN CONTENT ================================================== -->
@@ -142,7 +127,8 @@
 									<li class="list"><b>Marketplace</b> - food, toiletries, cleaning products, clothing and household items.</li>
 									<li class="list"><b>Financial Assistance</b> - pay utility bills, rent and mortgage, birth certificates, etc.</li>
 									<ul class="list">
-										<button><a href=TODO download=TODO>Test PDF #1</a></button>
+										<button class="list"><a href=TODO download=TODO>Test PDF #1</a></button><br>
+										<button><a href=TODO download=TODO>Test PDF #4</a></button>
 									</ul>
 									<li class="list"><b>The Ohio Benefit Bank</b> - access public benefits (SNAP (food stamps), WIC, Medicaid, child care subsidies, federal & state income taxes, etc.)</li>
 									<ul class="list">
@@ -238,11 +224,13 @@
 					<div class="footer-content">
 						<p class="text-center">© Madisonville Education and Assistance Center 2017</p>
 						<p class="text-center">4600 Erie Avenue, Cincinnati, OH 45227 | <a href="tel:5132715501">(513) 271-5501</a> | TEST@TEST.COM</p>
+						<ul class="list-unstyled list-inline text-center">
+							<li> <a href="#" target="_blank"> <i class="fa fa-facebook-official"></i> </a> </li>
+						</ul>
 					</div> 
                     <div class="clearfix"></div>
-                    
-                </div> <!-- .row -->
-            </div> <!-- .container -->
+                </div>
+			</div> <!-- .container -->
         </div> <!-- .footer-main -->
         <!--<div class="footer-bottom"></div>-->
     </footer> <!-- main-footer -->
