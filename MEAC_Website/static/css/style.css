@@ -323,11 +323,14 @@ a:hover, a:focus, a:active {
   font-weight: bold;
 }
 .cause .cause-details {
-  /*text-align: justify;*/
   padding: 0 15px;
   font-size: 13px;
-  margin-bottom: 15px;
-  min-height: 115px;
+  min-height: 125px;
+}
+.cause .team-details {
+  padding: 0 15px;
+  font-size: 13px;
+  min-height: 85px;
 }
 .cause:hover {
   background: #f0f0f0;
@@ -1334,6 +1337,10 @@ li img:hover {
 
 .box-text {
   padding: 0 10px;
+}
+
+.box-text-xl {
+  font-size: 40px;
 }
 
 .iframe {	
