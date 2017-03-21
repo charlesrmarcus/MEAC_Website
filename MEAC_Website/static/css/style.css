@@ -136,11 +136,11 @@ a:hover, a:focus, a:active {
 
 .navbar-alert {
   display: none;
-  background: #ff0000;
+  background: #ed1212;
   font-size: 16px;
 }
 
-.navbar-alert, p {
+.navbar-alert p {
   padding: 5px 0 5px 0;
   margin: 0;
 }
@@ -365,15 +365,16 @@ a:hover, a:focus, a:active {
 .footer-top {
   background: #f4b00f;
   height: 5px;
+  margin: 0 0 5px 0;
 }
 
 .main-footer {
   background: #0B486B;
   color: #ffffff;
-  margin: 20px 0 0 0;
+  margin: 25px 0 0 0;
 }
 .main-footer .footer-main {
- padding: 5px 0;
+ padding: 5px 0 0 0;
   
 }
 .main-footer .footer-title {
@@ -461,16 +462,20 @@ footer, .push { /* if the footer height changes the responsive section must also
 }
 
 .col-wrap {
-  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
-  column-count: 3;
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
 }
 
 .partner-logo {
-  max-width: 200px;
+  max-height: 70px;
   margin: 15px;
 }
 
+.caption {
+  margin: 10px 0 0 0;
+  font-size: 13px;
+}
   
 /* Pages/Gallery 
 ================================= */
