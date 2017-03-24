@@ -862,6 +862,18 @@ form .alert {
 }
 
 /* =============================================================================
+	Change calendar style responsively 
+========================================================================== */
+
+.cal-lg {
+  display: block;
+}
+
+.cal-sm {
+  display: none;
+}
+
+/* =============================================================================
 	Responsive
 ========================================================================== */
 /* Large devices (large desktops, 1200px and Down) */
@@ -970,6 +982,14 @@ form .alert {
 
   .col-form {
     margin-bottom: 25px;
+  }
+
+  .cal-lg {
+    display: none;
+  }
+
+  .cal-sm {
+    display: block;
   }
 }
 /* Custom width for MEAC footer */
