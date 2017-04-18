@@ -1415,11 +1415,31 @@ li img:hover {
 ========================================================================== */
 
 .responsive-cal {
-  position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
 }
  
 .responsive-cal iframe {
-  position: absolute; top:0; left: 0; width: 100%; height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+}
+
+.cal {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+}
+
+.cal iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 101%;
 }
 
 /* ==========================================================================
