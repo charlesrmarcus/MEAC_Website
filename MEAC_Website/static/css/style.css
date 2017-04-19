@@ -4,27 +4,30 @@
  @author: Ouarmedia/Farouk BLALOU
  @version: 1.0
  
+ * Changes made by Fifth Third Bank employees on behalf of MEAC * 
+
+ Note: CSS classes may defined in more than one area of this 
+ style sheet - always check the responsive section of this document 
+ when making changes. 
+
  --------------------------------------------------------------------------------------------------------------------- */
 
 /* =============================================================================
   Base
-========================================================================== */
+============================================================================= */
 html, body {
   height: 100%;
 }
-
 body {
   font-family: "Open sans", sans-serif;
   color: #333333;
 }
-
 h1,
 h2,
 h3,
 h4 {
   font-family: "Dosis", sans-serif;
 }
-
 a {
   color: inherit;
 }
@@ -34,25 +37,21 @@ a:hover, a:focus, a:active {
 
 /* =============================================================================
   Layout
-========================================================================== */
-/* Header 
-================================= */
+============================================================================= */
 
-.logo {
-  display: block;
- /* text-indent: -9999px;*/
-  width:20px;
-  height: 20px;
-  background: url(kiwi.svg);
-  background-size: 100px 82px;
+/* === Header/Navbar ================================= */
+
+.logo-img { 
+  float:left;
+  margin-left:10px;
+  padding: 6px 0;
+  height: 90px;
 }
-
 .navbar-static-top {
   margin: 0;
   border: 0;
   color: #fff;
 }
-
 .navbar-top {
   background: #3B8686;
   font-size: 12px;
@@ -67,7 +66,6 @@ a:hover, a:focus, a:active {
 .navbar-top .header-contact li .fa {
   margin-right: 5px;
 }
-
 .navbar-main {
   margin-bottom: 0;
   color: #fff;
@@ -133,20 +131,18 @@ a:hover, a:focus, a:active {
 .navbar-main .icon-bar {
   background: #fff;
 }
-
 .navbar-alert {
   display: none;
   background: #ed1212;
   font-size: 16px;
 }
-
 .navbar-alert p {
   padding: 5px 0 5px 0;
   margin: 0;
 }
 
-/* Home Slider 
-================================= */
+/* === Home Carousel ================================= */
+
 .carousel-home img {
   width: 100%;
 }
@@ -187,187 +183,89 @@ a:hover, a:focus, a:active {
 .carousel-home .btn {
   margin-top: 30px;
 }
-
 .section-home {
   margin: 30px 0;
 }
 
-/* home/ about-us 
-================================= */
-.about-us {
-  margin: 30px 0;
-}
+/* === Nav Boxes (used differently on Our Impact) ================================= */
 
-	/* === Classes such as .about-us-col also exist in the responsive section 
-	  of this style sheet > names must be changed in both locations! === */
-	
-.about-us-teal {
+.nav-box {
+  margin: 30px 0;
+}	
+.nav-box-teal {
   background-color: #0B486B;
 }
-.about-us-green {
+.nav-box-green {
   background-color: #3B8686;
 }
-.about-us-col {
+.nav-box-col {
   height: 325px;
   padding: 25px;
   text-align: center;
-  /*background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMjgwODE0IiB5MT0iLTAuMTAyMjA4IiB4Mj0iMC43MTkxODYiIHkyPSIxLjEwMjIwOCI+PHN0b3Agb2Zmc2V0PSItMjUlIiBzdG9wLWNvbG9yPSIjMTE1YjliIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMxMjkwZjgiLz48c3RvcCBvZmZzZXQ9IjEyNSUiIHN0b3AtY29sb3I9IiMxMTViOWIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background-size: 100%;
-  background-image: -moz-linear-gradient(290deg, #0B486B -25%, #3B8686 50%, #0B486B 125%);
-  background-image: -webkit-linear-gradient(290deg, #0B486B -25%, #3B8686 50%, #0B486B 125%);
-  background-image: linear-gradient(160deg, #0B486B -25%, #3B8686 50%, #0B486B 125%);*/
   color: #fff;
 }
-.about-us-col .col-icon-wrapper {
+.nav-box-col .col-icon-wrapper {
   min-height: 80px;
 }
-.about-us-col .col-title {
+.nav-box-col .col-title {
   text-transform: uppercase;
 }
-.about-us-col .col-details {
+.nav-box-col .col-details {
   text-align: center-left;
   margin-bottom: 15px;
   min-height: 80px;
 }
-
-/* home/reasons 
-================================= */
-.home-reasons {
-  margin: 25px 0;
-}
-
-.reasons-col {
-  position: relative;
-  overflow: hidden;
-}
-.reasons-col img {
-  width: 100%;
-  -moz-transition: all, 0.5s;
-  -o-transition: all, 0.5s;
-  -webkit-transition: all, 0.5s;
-  transition: all, 0.5s;
-}
-.reasons-col .reasons-titles {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  background: #3B8686;
-  width: 100%;
+.box {
+  padding: 10px 20px 20px 20px;
+  background-color: #0B486B;
+  margin: 0 auto;	
+  font-size: 15px;
   color: #fff;
-  text-transform: uppercase;
-  height: 125px;
-  padding: 25px 0;
+  margin: 0 0 17px 0;
 }
-.reasons-col .reasons-title {
-  font-weight: bold;
-}
-.reasons-col .on-hover {
-  position: absolute;
-  top: 0;
-  bottom: 125px;
-  width: 100%;
-  padding: 25px;
-  color: #fff;
-  text-align: justify;
-  background: #3B8686;
-  border-bottom: 1px solid #fff;
-  visibility: hidden;
-  opacity: 0;
-  -moz-transition: all, 0.5s;
-  -o-transition: all, 0.5s;
-  -webkit-transition: all, 0.5s;
-  transition: all, 0.5s;
-}
-.reasons-col:hover .on-hover {
-  visibility: visible;
-  opacity: 1;
-  padding: 50px;
-  -moz-transition: all, 1s;
-  -o-transition: all, 1s;
-  -webkit-transition: all, 1s;
-  transition: all, 1s;
-}
-.reasons-col:hover img {
-  -moz-transform: perspective(1.1) scale3d(1.1, 1.1, 1.1);
-  -webkit-transform: perspective(1.1) scale3d(1.1, 1.1, 1.1);
-  transform: perspective(1.1) scale3d(1.1, 1.1, 1.1);
+.box-text-xl {
+  font-size: 40px;
 }
 
-/* home/causes
-================================= */
-.cause {
-  padding-bottom: 15px;
-  margin-bottom: 30px;
-  border: 1px solid #0B486B;
+/* === Details boxes (photo, title, and text) ================================= */
+
+.details {
+  padding-bottom: 10px;
   -moz-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   -webkit-transition: all, 0.3s;
   transition: all, 0.3s;
 }
-.cause-small {
+.details-small {
   max-width: 250px;
 }
-.cause .cause-progress {
-  margin: 0 10px 15px;
-  border: 1px solid #0B486B;
-  border-radius: 3px;
-}
-.cause .cause-progress .progress-bar {
-  background: #0B486B;
-  box-shadow: none;
-}
-.cause .cause-img {
+.details .details-img {
   margin-bottom: 15px;
   width: 100%;
 }
-.cause .cause-title {
+.details .details-title {
   text-align: center;
   margin-bottom: 10px;
   font-weight: bold;
 }
-.cause .cause-details {
+.details .impact-text {
   padding: 0 15px;
   font-size: 13px;
-  min-height: 175px;
+  min-height: 100px;
 }
-.cause .team-details {
+.details .team-text {
   padding: 0 15px;
   font-size: 13px;
-  min-height: 103px;
-}
-.cause:hover {
-  background: #f0f0f0;
-  color: #144d7b;
-  border-color: #144d7b;
+  min-height: 120px;
 }
 
-/* Team 
-================================= */
-.team-member {
-  background: #0B486B;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 15px;
-  border: 1px solid #0B486B;
-}
-.team-member .thumnail img {
-  width: 100%;
-}
-.team-member .member-name {
-  font-weight: bold;
-}
-.team-member .member-position {
-  padding: 0 15px 5px;
-}
+/* === Footer ================================= */
 
-/* footer 
-================================= */
 .footer-top {
   background: #f4b00f;
   height: 5px;
   margin: 0 0 5px 0;
 }
-
 .main-footer {
   background: #0B486B;
   color: #ffffff;
@@ -386,7 +284,6 @@ a:hover, a:focus, a:active {
   background: #fff;
   margin: 10px 0;
   text-align: left;
-  
 }
 .main-footer .footer-title .title-under:after {
   margin: 0;
@@ -412,127 +309,211 @@ a:hover, a:focus, a:active {
 .main-footer .tweet:last-child:after {
   display: none;
 }
-
 .footer-bottom {
   background: #3B8686;
   padding: 3px;
 }
-
 .footer-form  {
   margin-bottom: 5px;
   color: #fff;
 }
 
+/* === All Pages ================================= */
 
-
-/* Pages 
-================================= */
 .page-heading {
   background: url('../images/heading-bg.jpg?1428795369') no-repeat center;
   background-size: cover;
   min-height: 190px;
   color: #fff;
-  /*padding: 25px 15px;
-  margin-bottom: 50px;*/
 }
-
-
 .page-heading .title-under {
    background: #ddddd9;
 }
-
 .page-description {
   font-size: 18px;
 }
-
-
 .main-container {
-  /*margin-bottom: 50px;*/
   background-color: #ffffff;
 }
-
 .wrapper { /* if the footer height changes the responsive section must also be updated */
   min-height: 100%;
   margin: 0 auto -99px; /* the bottom margin is the negative value of the footer's height */
 }
-
 footer, .push { /* if the footer height changes the responsive section must also be updated */
   height: 99px; /* .push must be the same height as footer */
   clear: both; 
 }
-
 .col-wrap {
   -webkit-column-count: 4; /* Chrome, Safari, Opera */
   -moz-column-count: 4; /* Firefox */
   column-count: 4;
 }
 
-.partner-logo {
-  max-height: 70px;
-  margin: 15px;
+/* === Timeline (History) ================================= */
+
+section#timeline {
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
 }
+section#timeline:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -1px;
+  width: 2px;
+  height: 95%;
+  background: #0B486B;
+}
+section#timeline article {
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+section#timeline article:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section#timeline article div.inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
+}
+section#timeline article div.inner span.date {
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -32px;
+  border-radius: 100%;
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #0B486B;
+  font-weight: 400;
+}
+section#timeline article div.inner span.date span {
+  display: block;
+  text-align: center;
+}
+section#timeline article div.inner span.date span.year {
+  font-size: 20px;
+  position: center;
+  padding-top: 10px;
+}
+section#timeline article div.inner h2 {
+  padding: 10px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+section#timeline article div.inner h2:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  width: 10px; 
+	height: 10px;
+  -webkit-transform: rotate(-45deg);
+}
+section#timeline article div.inner p {
+  padding: 15px;
+  margin: 0;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 0 0 6px 6px;
+}
+section#timeline article:nth-child(2n+2) div.inner {
+  float: right;
+}
+section#timeline article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
+}
+section#timeline article div.inner h2 {
+  background: #3B8686;
+}
+section#timeline article div.inner h2:after {
+  background: #3B8686;
+}
+@media (max-width: 767px) {
+  section#timeline article:nth-child(2n+1) div.inner {
+  float: right;
+  }
+  section#timeline article:nth-child(2n+1) div.inner h2:after {
+    left: -5px;
+  }
+  section#timeline:before {
+    left: 10%;
+  }
+  section#timeline article div.inner {
+    width: 80%;
+  }
+  section#timeline article div.inner span.date {
+    left: 10%;
+  }
+}
+
+/* === About ================================= */
 
 .caption {
   margin: 10px 0 0 0;
   font-size: 13px;
 }
-  
-/* Pages/Gallery 
-================================= */
-.gallery-item {
-  padding: 0;
-  display: block;
-  margin: 0;
-}
-.gallery-item img {
-  width: 100%;
-}
 
-.contact-items {
-  margin-top: 30px;
-}
-.contact-items .contact-item {
-  margin-bottom: 10px;
-  vertical-align: middle;
-  font-size: 16px;
-}
-.contact-items .contact-icon {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  background: #0B486B;
-  vertical-align: middle;
-  margin-right: 5px;
-  color: #fff;
-  text-align: center;
-}
-.contact-items .contact-icon .fa {
-  vertical-align: sub;
-  font-size: 20px;
-  margin-top: 7px;
-}
+/* === Contact Us ================================= */
 
-/* contact 
-================================= */
 .contact-map {
   height: 350px;
   background: #ccc;
 }
-
 form .alert {
   display: none;
 }
 
-/* Causes 
-================================= */
-.cause-carousel {
-  margin-top: 15px;
-  margin-bottom: 30px;
+/* === Get Involved - Financial ================================= */
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+}
+
+/* === Get Involved - Volunteer ================================= */
+
+.list {
+  margin: 0 0 5px 0;
+}
+.pdf-view {
+  width: 100%;
+  height: 500px;
+  margin: 20px 0;
+  border: 0.5px solid #999999;
+}
+
+/* === Other ================================= */
+
+/* on Home and Supporters pages */
+.partner-logo {
+  max-height: 70px;
+  margin: 15px;
 }
 
 /* =============================================================================
 	Module
-========================================================================== */
+============================================================================= */
+
+/* === Buttons ================================= */
+
 .btn-primary {
   background: #0B486B;
   border: none;
@@ -549,7 +530,6 @@ form .alert {
   color: #0B486B;
   border: 1px solid #0B486B;
 }
-
 .btn-secondary {
   background: #fff;
   color: #0B486B;
@@ -559,7 +539,6 @@ form .alert {
   background: #0B486B;
   color: #fff;
 }
-
 .btn-donate {
   background: #3B8686;
   border: none;
@@ -579,7 +558,6 @@ form .alert {
   color: #f4b00f;
   border: 1px solid #0B486B;
 }
-
 .btn-volunteer {
   background: #3B8686;
   border: none;
@@ -599,8 +577,7 @@ form .alert {
   color: #f4b00f;
   border: 1px solid #0B486B;
 }
-
-.btn-about-1 {
+.btn-nav-box-1 {
   background: #3B8686;
   border: #0B486B;
   border-radius: 0;
@@ -611,7 +588,7 @@ form .alert {
   -webkit-transition: all, 0.3s;
   transition: all, 0.3s;
 }
-.btn-about-2 {
+.btn-nav-box-2 {
   background: #0B486B;
   border: #3B8686;
   border-radius: 0;
@@ -622,11 +599,13 @@ form .alert {
   -webkit-transition: all, 0.3s;
   transition: all, 0.3s;
 }
-.btn-about-1:hover, .btn-about-2:hover {
+.btn-nav-box-1:hover, .btn-nav-box-2:hover {
   background: #ffffff;
   border: #ffffff;
   color: #333333;
 } 
+
+/* === Titles ================================= */
 
 .title-style-1 {
   text-align: center;
@@ -634,7 +613,6 @@ form .alert {
   font-size: 26px;
   margin-bottom: 25px;
 }
-
 .title-style-2 {
   text-align: left;
   text-transform: uppercase;
@@ -649,7 +627,6 @@ form .alert {
   margin: 0;
   margin-top: 10px;
 }
-
 .title-under {
   display: block;
   margin: 5px auto;
@@ -667,15 +644,15 @@ form .alert {
   margin-top: 10px;
 }
 
-/* Modal
-================================= */
+/* === Modal ================================= */
+
 .form-control {
   border-radius: 0;
   box-shadow: none;
 }
 
-/* Tabeles
-================================= */
+/* === Tables ================================= */
+
 .table-style-1 thead {
   background: #0B486B;
   border-bottom: 1px solid #144d7b;
@@ -685,11 +662,9 @@ form .alert {
 .table-style-1 th {
   border-bottom: 1px solid #0B486B;
 }
-
 .td-phone {
   width: 130px;
 }
-
 .table-style-2 thead {
   background: #0B486B;
   border-bottom: 1px solid #144d7b;
@@ -704,36 +679,31 @@ form .alert {
   border-bottom: 1px solid #0B486B;
 }
 
-/* Tabs
-================================= */
+/* === Tabs ================================= */
+
 .nav-tabs {
   border-bottom-color: #0B486B;
   margin-bottom: 15px;
 }
-
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   background: #0B486B;
   color: #fff;
 }
-
 .nav-tabs > li > a {
   border-color: #0B486B;
   border-radius: 0;
 }
-
 .nav-tabs > li > a:hover {
   border-color: #3B8686 #3B8686 #0B486B #3B8686;
 }
-
 .nav > li > a:hover, .nav > li > a:focus {
   background: #3B8686;
   color: #fff;
 }
 
-/* Accordion
-================================= */
+/* === Accordion ================================= */
 .panel-default {
   border-color: #0B486B;
   border-radius: 0;
@@ -747,8 +717,8 @@ form .alert {
   background: #3B8686;
 }
 
-/* Modal
-================================= */
+/* Modal ================================= */
+
 .modal .modal-content {
   border-radius: 0;
 }
@@ -759,7 +729,6 @@ form .alert {
 .modal .modal-header .close {
   font-style: 26px;
 }
-
 .lightbox {
   position: relative;
   display: block;
@@ -829,8 +798,8 @@ form .alert {
   transform: perspective(1.15) scale3d(1.15, 1.15, 1.15);
 }
 
-/* Ow carousel
-================================= */
+/* === Owl Carousel ================================= */
+
 .owl-next,
 .owl-prev {
   width: 32px;
@@ -855,41 +824,22 @@ form .alert {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-
 .owl-next {
   left: auto;
   right: 0;
 }
 
 /* =============================================================================
-	Change calendar style responsively 
-========================================================================== */
-
-.cal-lg {
-  display: block;
-}
-
-.cal-sm {
-  display: none;
-}
-
-/* =============================================================================
 	Responsive
-========================================================================== */
+============================================================================= */
+
 /* Large devices (large desktops, 1200px and Down) */
 @media (max-width: 1200px) {
-  .about-us-col {
+  .nav-box-col {
     padding: 15px;
-  }
-
-  .reasons-col:hover .on-hover {
-    padding: 15px;
-  }
-
-  .reasons-col:hover .on-hover {
-    padding: 25px;
   }
 }
+
 /* Medium devices (desktops, 991px and Down) */
 @media (max-width: 991px) {
    .header-contact {
@@ -898,11 +848,9 @@ form .alert {
   .header-contact li {
     margin: 0 !important;
   }
-
   .header-social {
     text-align: center;
   }
-
   .navbar-main #navbar {
     float: none !important;
   }
@@ -932,7 +880,6 @@ form .alert {
     background: #0B486B;
     border-top-color: #3B8686;
   }
-  
   .carousel-home .carousel-title {
     font-size: 36px;
   }
@@ -942,24 +889,14 @@ form .alert {
   .carousel-home .btn {
     margin-top: 15px;
   }
-
-  .about-us-col {
+  .nav-box-col {
     margin-bottom: 25px;
   }
-
-  .team-member {
-    margin-bottom: 25px;
-  }
-
-  .reasons-col {
-    margin-bottom: 25px;
-  }
-
   .footer-col {
     margin-bottom: 0px;
   } 
-
 }
+
 /* Small devices (tablets, 768px and Down) */
 @media (max-width: 768px) {
   .carousel-home .carousel-title {
@@ -979,30 +916,22 @@ form .alert {
     font-size: 1.5em;
     padding-top: 4px;
   }
-
   .col-form {
     margin-bottom: 25px;
   }
-
-  .cal-lg {
-    display: none;
-  }
-
-  .cal-sm {
-    display: block;
-  }
 }
+
 /* Custom width for MEAC footer */
 @media (max-width: 580px) {
   .wrapper {
     min-height: 100%;
 	  margin: 0 auto -117px; /* the bottom margin is the negative value of the footer's height */
   }
-
   footer, .push {
     height: 117px; /* .push must be the same height as .footer */
   }
 }
+
 /* Extra Small devices (tablets, 480px and Down) */
 @media (max-width: 480px) {
   .carousel-home .carousel-title {
@@ -1021,32 +950,35 @@ form .alert {
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
   }
-  .cause {
+  .details {
     min-height: 350px;
   }
+  .pdf-view {
+    height: 400px;
+  }
 }
+
 /* Custom width for MEAC footer */
 @media (max-width: 330px) {
   .wrapper {
     min-height: 100%;
 	  margin: 0 auto -135px; /* the bottom margin is the negative value of the footer's height */
   }
-
   footer, .push {
     height: 135px; /* .push must be the same height as .footer */
   }
-
   .single-col {
     width: 100%;
   }
 }
+
 /* =============================================================================
 	Animations
-========================================================================== */
+============================================================================= */
+
 .animate-onscroll {
   visibility: hidden;
 }
-
 .animated {
   visibility: visible;
   -webkit-animation-duration: 1s;
@@ -1229,256 +1161,4 @@ form .alert {
 .zoomIn {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
-}
-
-section#timeline {
-  width: 100%;
-  margin: 20px auto;
-  position: relative;
-}
-section#timeline:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin: 0 0 0 -1px;
-  width: 2px;
-  height: 95%;
-  background: #0B486B;
-}
-section#timeline article {
-  width: 100%;
-  margin: 0;
-  position: relative;
-}
-section#timeline article:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-section#timeline article div.inner {
-  width: 40%;
-  float: left;
-  margin: 5px 0 0 0;
-  border-radius: 6px;
-}
-section#timeline article div.inner span.date {
-  display: block;
-  width: 60px;
-  height: 60px;
-  padding: 5px 0;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 0 0 -32px;
-  border-radius: 100%;
-  text-transform: uppercase;
-  background: #ffffff;
-  color: #0B486B;
-  font-weight: 400;
-  /*border: 0px solid #ffffff;*/
-  /*box-shadow: 0 0 0 2px #ffffff;*/
-}
-section#timeline article div.inner span.date span {
-  display: block;
-  text-align: center;
-}
-section#timeline article div.inner span.date span.year {
-  font-size: 20px;
-  position: center;
-  padding-top: 10px;
-}
-section#timeline article div.inner h2 {
-  padding: 10px;
-  margin: 0;
-  color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  position: relative;
-}
-section#timeline article div.inner h2:after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -5px;
-  width: 10px; 
-	height: 10px;
-  -webkit-transform: rotate(-45deg);
-}
-section#timeline article div.inner p {
-  padding: 15px;
-  margin: 0;
-  font-size: 14px;
-  background: #fff;
-  border-radius: 0 0 6px 6px;
-}
-section#timeline article:nth-child(2n+2) div.inner {
-  float: right;
-}
-section#timeline article:nth-child(2n+2) div.inner h2:after {
-  left: -5px;
-}
-section#timeline article div.inner h2 {
-  background: #3B8686;
-}
-section#timeline article div.inner h2:after {
-  background: #3B8686;
-}
-@media (max-width: 767px) {
-  section#timeline article:nth-child(2n+1) div.inner {
-  float: right;
-  }
-  section#timeline article:nth-child(2n+1) div.inner h2:after {
-    left: -5px;
-  }
-  section#timeline:before {
-    left: 10%;
-  }
-  section#timeline article div.inner {
-    width: 80%;
-  }
-  section#timeline article div.inner span.date {
-    left: 10%;
-  }
-}
-
-.carousel-content {
-    color:black;
-    display:flex;
-    align-items:center;
-}
-
-#text-carousel {
-  width: 100%;
-  height: auto;
-  padding: 50px;
-}
-
-div.supporters_left {
-  float: left;
-}
- 
-div.supporters_right {
-  float: right;
-}
-
-div.supporters_center {
-  text-align: center;
-}
-
-li img {
-  float: Left;
-  margin: 10px;
-  border: 2px solid #0B486B;
- 
-  -webkit-transition: box-shadow 0.5s ease;
-  -moz-transition: box-shadow 0.5s ease;
-  -o-transition: box-shadow 0.5s ease;
-  -ms-transition: box-shadow 0.5s ease;
-  transition: box-shadow 0.5s ease;
-}
- 
-li img:hover {
-  -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
-  box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
-}
-
-.box {
-  padding: 10px 20px 20px 20px;
-  background-color: #0B486B;
-  margin: 0 auto;	
-  font-size: 15px;
-  color: #fff;
-  margin: 0 0 17px 0;
-}
-
-.box-text {
-  padding: 0 10px;
-}
-
-.box-text-xl {
-  font-size: 40px;
-}
-
-.iframe {	
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: 1.5px solid #0B486B;
-}
-
-/* ==========================================================================
-	Make iframe Google Calendar responsive
-========================================================================== */
-
-.responsive-cal {
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-}
- 
-.responsive-cal iframe {
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-}
-
-.cal {
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-}
-
-.cal iframe {
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 101%;
-}
-
-/* ==========================================================================
-	Make iframe Google Maps responsive
-========================================================================== */
-
-.google-maps {
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-  overflow: hidden;
-}
-.google-maps iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* ==========================================================================
-	Partner Logos 
-========================================================================== */
-
-.logo-img { 
-  float:left;
-  margin-left:10px;
-  padding: 6px 0;
-  height: 90px;
-}
-
-.list {
-  margin: 0 0 5px 0;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.no-underline:hover {
-  text-decoration: none;
 }
