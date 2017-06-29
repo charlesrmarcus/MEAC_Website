@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Supporters{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container fadeIn animated">
+	
+			<div class="text-center">
+				<br/>
+				<h1>SUPPORTERS<span class="title-under"></span></h1>
+				<p class="page-description">Thank you to our partners and supporters!</p>
+				<br/>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<img src ="../static/images/partners/CincyWorks_logo.png" class="partner-logo"/>
+					<img src ="../static/images/partners/FreestoreFoodBank_logo.jpg" class="partner-logo"/>
+					<img src="../static/images/partners/CityOfCincinnati_logo.jpg" class="partner-logo"/>
+					<img src ="../static/images/partners/UnitedWay_logo.png" class="partner-logo"/>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<h2 class="title-style-1">Churches<span class="title-under"></span></h2>
+                    {% for element in churchList %}
+                        <p>{{ element.text }}</p>
+					{% endfor %}
+				</div>
+				<div class="col-md-6 text-center">
+					<h2 class="title-style-1">Organizations<span class="title-under"></span></h2>
+					{% for element in orgList %}
+                        <p>{{ element.text }}</p>
+					{% endfor %}
+				</div>
+			</div>
+				
+		</div> <!-- /.container -->			
+	</div> <!-- /.main-container -->
+	<div class="push"></div>
+{% endblock %}

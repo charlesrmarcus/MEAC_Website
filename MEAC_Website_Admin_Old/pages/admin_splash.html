@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Administrator Portal{% endblock %}
+
+{% block content %}
+<div class="page-header" align="center">
+    <h1>Welcome to the Administrator Portal</h1>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class="w3-panel w3-red">
+        <h3>{{ message }}</h3>
+</div>
+{% endfor %}
+  
+<div class="main-container">
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-md-2">
+                <div class="btn-group-vertical" role="group">
+                    <a href="{{ url_for('admin_splash') }}" class="btn btn-info" role="button">Administrator Portal</a>
+                    <a href="{{ url_for('new_adminFlag') }}" class="btn btn-info" role="button">Emergency Closures</a>
+                    <a href="{{ url_for('new_adminPage') }}" class="btn btn-info" role="button">Page Selection</a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-info" role="button">Logout</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <p>Please select one of the following options to update, add, or remove content from the website. Click Toggle Banner to turn on MEAC's emergency closure banner. Click Page Selection to continue forward in editing content, files, or users. Please also remember to logout when your changes are finished.</p>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}

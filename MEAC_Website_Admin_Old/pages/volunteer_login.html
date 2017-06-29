@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+
+{% block title %}MEAC | Volunteer Login{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="container">
+        </br>
+        <h2>Volunteer Login</h2>
+        {% for message in get_flashed_messages() %}
+            <div class="w3-panel w3-red">
+            <h3>{{ message }}</h3>
+            </div>
+        {% endfor %}
+
+        <form action="{{ url_for('volunteer_login') }}" method="post">
+        {{ form.csrf_token }}
+        {{ form.username.label }} {{ form.username() }} </br>
+        {{ form.password.label }} {{ form.password() }} </br>
+        {{ form.remember_me.label }} {{ form.remember_me() }} </br><hr> 
+        
+        {{ form.submit() }}
+        
+        
+        <!-- <dl>
+        <dt>Username:
+        <dd><input type="text" name="username">
+        <dt>Password:
+        <dd><input type="password" name="password">
+        insert are you a robot check here
+        <dd><input type="submit" value="Login">
+        </dl> -->
+        </form>
+
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}

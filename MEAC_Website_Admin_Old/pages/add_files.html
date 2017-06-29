@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header" align="center">
+    <h1>Content Addition/Deletion</h1>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class="w3-panel w3-green">
+        <h3>{{ message }}</h3>
+</div>
+{% endfor %}
+
+<div class="main-container">
+    <div class="container">
+
+        <!-- Setting up the Form Elements/To be put into database -->
+        <div class="row">
+            <div class="col-md-2">
+                <div class="btn-group-vertical" role="group">
+                    <a href="{{ url_for('admin_splash') }}" class="btn btn-info" role="button">Administrator Portal</a>
+                    <a href="{{ url_for('new_adminFlag') }}" class="btn btn-info" role="button">Emergency Closures</a>
+                    <a href="{{ url_for('new_adminPage') }}" class="btn btn-info" role="button">Page Selection</a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-info" role="button">Logout</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h3>File Addition/Deletion</h3>
+                <p>To add files, fill in all the following fields, including a filename and a filepath. You can also delete files at the bottom of the page.</p>
+             
+
+        
+        <form method="POST" enctype="multipart/form-data" name="file_form">
+            <hr>
+            <p>Proceed to fill in all of the following fields, (if the field is not applicable, N/A is appropriate). The green banner will indicate your changes have been saved.</p>
+            
+            {{ file_form.csrf_token }}
+            
+            {{ file_form.file.label }} <label class="align">{{ file_form.file() }} </label></br>
+            <p style="color:red">{{ errorList[0] }}</p></br>
+            {{ file_form.file_name.label }} <label class="align">{{ file_form.file_name() }} </label></br>
+            <p style="color:red">{{ errorList[2] }}</p></br>
+            {{ file_form.file_description.label }} <label class="align">{{ file_form.file_description() }} </label></br>
+            <p style="color:red">{{ errorList[1] }}</p></br>
+            
+            {{ file_form.add_file() }} 
+            <hr>
+        </form>
+
+        <form method="POST" enctype="multipart/form-data" name="delete_form">
+
+            <p>Select a particular element to delete.</p></br>
+            {{ delete_form.field.label }} {{ delete_form.field() }} </br>
+            {{ delete_form.delete() }}
+            
+        </form>
+        <!-- Column --></div>
+        <!-- Row --></div>
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}

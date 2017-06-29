@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Get Involved{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container fadeIn animated">
+		
+			<div class="text-center">
+				<br/>
+				<h1>{{ content_dict['get_involved_header_content'][0] }}<span class="title-under"></span></h1>
+				<br/>
+			</div>
+	
+			<p class="page-description text-center">{{ content_dict['get_involved_header_content'][1] }}
+			</p>
+			<hr>
+			<div class="section-home nav-box">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-3 col-sm-6">
+							<div class="nav-box-col nav-box-green">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-money" style="font-size:72px;color:white"></i>
+								</div>
+								<h3 class="col-title">{{ content_dict['financial_gifts_content'][0] }}</h3>
+								<div class="col-details">
+									<p>{{ content_dict['financial_gifts_content'][1] }}</p>
+								</div>
+								<a href="{{ url_for('populateGetInvolvedFinancialPage') }}" class="btn btn-nav-box-1">Learn More</a>
+							</div>
+						</div>				
+
+						<div class="col-md-3 col-sm-6">
+							<div class="nav-box-col nav-box-teal">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-archive" style="font-size:72px;color:white"></i>
+								</div>
+								<h3 class="col-title">{{ content_dict[
+                                'donate_products_content'][0] }}</h3>
+								<div class="col-details">
+									<p>{{ content_dict[
+                                'donate_products_content'][1] }}</p>
+								</div>
+								<a href="{{ url_for('populateGetInvolvedProductsPage') }}" class="btn btn-nav-box-2">Learn More</a>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6">
+							<div class="nav-box-col nav-box-green">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-child" style="font-size:72px;color:white"></i>
+								</div>
+								<h3 class="col-title">{{ content_dict['volunteer_content'][0] }}</h3>
+								<div class="col-details">
+									<p>{{ content_dict['volunteer_content'][1] }}</p>
+								</div>
+								<a href="{{ url_for('populateGetInvolvedVolunteerPage') }}" class="btn btn-nav-box-1">Learn More</a>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-6">
+							<div class="nav-box-col nav-box-teal">
+								<div class="col-icon-wrapper">
+									<i class="fa fa-calendar" style="font-size:72px;color:white"></i>
+								</div>
+								<h3 class="col-title">{{ content_dict['event_calendar_content'][0] }}</h3>
+								<div class="col-details">
+									<p>{{ content_dict['event_calendar_content'][1] }}</p>
+								</div>
+								<a href="{{ url_for('populateEventCalendarPage') }}" class="btn btn-nav-box-2">Learn More</a>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div> <!-- /.nav-box -->
+
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container  -->
+	<div class="push"></div>
+{% endblock %}

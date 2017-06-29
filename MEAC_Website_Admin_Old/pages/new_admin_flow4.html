@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header" align="center">
+    <h1>Emergency Closures</h1>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class="w3-panel w3-green">
+        <h3>{{ message }}</h3>
+</div>
+{% endfor %}
+
+<div class="main-container">
+    <div class="container">    
+        <form method="POST" enctype="multipart/form-data" name="form">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="btn-group-vertical" role="group">
+                        <a href="{{ url_for('admin_splash') }}" class="btn btn-info" role="button">Administrator Portal</a>
+                        <a href="{{ url_for('new_adminFlag') }}" class="btn btn-info" role="button">Emergency Closures</a>
+                        <a href="{{ url_for('new_adminPage') }}" class="btn btn-info" role="button">Page Selection</a>
+                        <a href="{{ url_for('logout') }}" class="btn btn-info" role="button">Logout</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <h3>Emergency Flag Operation</h3>
+                    <p>To turn on the emergency banner on the Home page, please check the correct box, then click submit. The green banner will confirm that your changes have been saved.</p>
+                    {{ form.csrf_token }}
+                    {{ form.flag.label }} {{ form.flag() }} </br>
+                    {{ form.submit() }}
+                </div>
+            </div>      
+        </form>
+
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}
