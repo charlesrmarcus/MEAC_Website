@@ -265,13 +265,13 @@ def populate_GetHelpPageAssistanceTabListItem():
 
     content = []
 
-    content.append(GetHelpPageAssistanceTabListItem(field_name="financial_assistance", text_content="pay utility bills, rent, and mortgage, birth certificates, etc.", display_name="", description=""))
+    content.append(GetHelpPageAssistanceTabListItem(field_name="marketplace", text_content="food, toiletries, cleaning products, clothing, and household items.", title_content="Marketplace"))
 
-    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
+    content.append(GetHelpPageAssistanceTabListItem(field_name="financial_assistance", text_content="pay utility bills, rent, and mortgage, birth certificates, etc.", title_content="Financial Assistance"))
 
-    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
-    
-    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
+    content.append(GetHelpPageAssistanceTabListItem(field_name="ohio_benefit_bank", text_content="access public benefits (SNAP (food stamps), WIC, Medicaid, child care subsidies, federal & state income taxes, etc.)", title_content="The Ohio Benefit Bank"))
+
+    content.append(GetHelpPageAssistanceTabListItem(field_name="referrals", text_content="to other organizations for services that MEAC does not provide.", title_content="Referrals"))
 
     for item in content:
         db.session.add(item)
