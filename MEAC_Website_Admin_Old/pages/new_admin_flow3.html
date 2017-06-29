@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header" align="center">
+    <h1>File Selection and Update</h1>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class="w3-panel w3-green">
+        <h3>{{ message }}</h3>
+</div>
+{% endfor %}
+
+<div class="main-container">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" name="file_form">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="btn-group-vertical" role="group">
+                        <a href="{{ url_for('admin_splash') }}" class="btn btn-info" role="button">Administrator Portal</a>
+                        <a href="{{ url_for('new_adminFlag') }}" class="btn btn-info" role="button">Emergency Closures</a>
+                        <a href="{{ url_for('new_adminPage') }}" class="btn btn-info" role="button">Page Selection</a>
+                        <a href="{{ url_for('logout') }}" class="btn btn-info" role="button">Logout</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <h3>File Input</h3>
+                    <p>To edit a specific file on the page, fill in the file_field section with one of the following choices</p>
+                    
+                    {{ file_form.file_field.label }} {{ file_form.file_field() }} </br>
+                    {{ file_form.file_submit() }}
+                     
+        </form>
+        <form method="POST" enctype="multipart/form-data" name="save_form">
+            <hr>
+            {{ save_form.csrf_token }}
+            {% if show_file %}
+            <p>Proceed to fill in all of the following fields, (if the field is not applicable, N/A is appropriate). The green banner will indicate your changes have been saved.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ save_form.file.label }} {{ save_form.file() }} </br>
+                    <p style="color:red">{{ errorList[1] }}</p></br>
+                    {{ save_form.file_display_name.label }} {{ save_form.file_display_name(cols='35',placeholder=fileQuery.display_name) }} </br>
+                    <p style="color:red">{{ errorList[0] }}</p></br>
+                </div>
+            </div>
+            
+            {{ save_form.save_file() }} 
+            <hr>
+            {% endif %}
+        </form>
+        <!-- Column --></div>
+        <!-- Row --></div>
+        
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %} 
+
+{% block title %}MEAC | Get Help{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container fadeIn animated">
+		
+			<div class="text-center">
+				<br>
+				<h1>GET HELP<span class="title-under"></span></h1>
+				<br>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="title-style-2">{{ content_dict['service_and_programs_content'][0] }}<span class="title-under"></span></h2>
+					<p>{{ content_dict['service_and_programs_content'][1] }}</p>
+					<ul class="list">
+						Download <a href="{{ files_dict['informational_client_brochure_file'][1] }}" download="{{ files_dict['informational_client_brochure_file'][0] }}"><ins>{{ files_dict['informational_client_brochure_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a><br>
+					</ul><br>
+					<div role="tabpanel">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#assistance" aria-controls="assistance" role="tab" data-toggle="tab">Assistance</a></li>
+						    <li role="presentation"><a href="#programs" aria-controls="programs" role="tab" data-toggle="tab">Programs</a></li>
+						  	<li role="presentation"><a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="assistance">
+								<p>Assistance Programs include:</p>
+								<ul>
+                                {% for element in assistanceList %}
+									<li class="list"><b>{{ element.title }}</b> - {{ element.text }}</li>
+								{% endfor %}	
+								</ul>
+                                <ul class="list">
+                                    Download <a href="{{ files_dict['benefit_bank_flyer_file'][1] }}" download="{{ files_dict['benefit_bank_flyer_file'][0] }}"><ins>{{ files_dict['benefit_bank_flyer_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a><br>
+                                </ul>
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="programs">
+								<p>Programs include:</p>
+								<ul>
+                                {% for element in programList %}
+									<li class="list"><b>{{ element.title }}</b> - {{ element.text }}</li>
+                                {% endfor %}
+								</ul>
+                                <ul class="list">
+                                    {{ content_dict['contact_1'][1] }} <br>									
+                                </ul> 
+                                <ul class="list">
+                                    {{ content_dict['contact_2'][1] }} <br>									
+                                </ul>
+                                <ul class="list">
+                                    Download <a href="{{ files_dict['enhance_life_file'][1] }}" download="{{ files_dict['enhance_life_file'][0] }}"><ins>{{ files_dict['enhance_life_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a>								
+                                </ul>
+                                <ul class="list">
+                                    {{ content_dict['contact_3'][1] }} <br>									
+                                </ul>
+                                <ul class="list">
+                                    Download <a href="{{ files_dict['cincy_works_file'][1] }}" download="{{ files_dict['cincy_works_file'][0] }}"><ins>{{ files_dict['cincy_works_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a>								
+                                </ul>
+                                <ul class="list">
+                                    {{ content_dict['contact_4'][1] }} <br>									
+                                </ul>	
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="events">
+								<p>Events include:</p>
+								<ul>
+                                {% for element in eventsList %}
+									<li class="list"><b>{{ element.title }}</b> - {{ element.text }}</li>
+                                {% endfor %}
+								</ul>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- .row -->
+			<br>
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="title-style-2">Contact Information<span class="title-under"></span></h2>
+					<p>Depending on the type of help you require, members of our MEAC team are available to answer your questions!</p>
+					<p><b>Assistance Programs: </b>(513) 271-5501 ext. 16</p>
+					<p><b>All Other Services & Programs: </b>(513) 271-5501</p>
+					<p>To see all contact information for MEAC, please click <a href="{{ url_for('populateContactPage') }}"><b>here</b></a>.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="title-style-2">Additional Information<span class="title-under"></h2>
+					<p>Please note:</p>
+					<ul>
+						<li class="list">The Emergency Financial Assistance Hotline opens up for accepting calls on the last Wednesday of each month.</li>
+						<li class="list">Please call to find out if the CAA will be on site during the Summer Cooling and Winter Heating seasons.</li>
+					</ul>
+				</div>
+			</div>
+
+		</div> <!-- .container -->
+	</div> <!-- .main-container -->
+	
+	<div class="push"></div>
+{% endblock %}

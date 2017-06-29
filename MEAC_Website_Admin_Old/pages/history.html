@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | History{% endblock %}
+
+{% block content %}	
+	<div class="main-container"> 
+		<div class="container">
+		
+			<div class="text-center">
+				<br/>
+				<h1>HISTORY<span class="title-under"></span></h1>
+				<br/>
+			</div>
+            <section id="timeline">
+                {% for element in content %}
+				<article>
+					<div class="inner">
+						<span class="date">
+							<span class="year">{{ element.description }}</span>
+						</span>
+						<h2>{{ element.display_name }}</h2>
+						<p><b>{{ element.title }}</b> - {{ element.text }}</p>
+						
+					</div>
+				</article>
+                {% endfor %}
+			</section>
+
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container  -->
+	<div class="push"></div>
+{% endblock %}

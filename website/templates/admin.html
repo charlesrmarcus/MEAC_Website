@@ -1,0 +1,50 @@
+<label>{{ (((data['home'])['entries'])[0])['field'] }}</label>
+
+<form action="{{ url_for('adminPage') }}" method="post" enctype="multipart/form-data">
+    <dl>
+        {% for page in pages %}
+            <dt>Page:
+            <dd><label>{{ page['id'] }}</label>
+                {% for page_data in [data[page['id']]] %}
+                    {% for entry in page_data['entries'] %}
+                        <h4>entry</h4>
+                        <dt>Title:
+                        <dd><label>{{ entry['field'] }}</label>
+                        <dt>Text:
+                        <dd><textarea name="{{ entry['page'] + ':' + entry['field']}}" rows="5" cols="40">{{ entry['text'] }}</textarea>
+                    {% endfor %}
+
+                {% for image in page_data['images'] %}
+                    <dt>Title:
+                    <dd><label>{{ image['field'] }}</label>
+                    <dt>Image:
+                        {% if image['path'] %}
+                            <dd><img src="{{ image['path'] }}" height="100" width="100">
+                        {% endif %}
+                    <dd><input type="file" name="somename" size="chars">
+                    <!-- need to add ability to delete images that are no longer needed -->
+                {% endfor %}
+
+                {% for file in page_data['files'] %}
+                    <dt>Title:
+                    <dd><label>{{ file['field'] }}</label>
+                    <dt>File:
+                        {% if file['path'] %}
+                            <dd><a>{{ file['path'] }}</a>
+                            <!-- insert link to existing file here -->
+                        {% endif %}
+                    <dd><input type="file" name="somename" size="chars">
+                    <!-- need to add ability to delete images that are no longer needed -->
+                {% endfor %}
+
+                {% for flag in page_data['flags'] %}
+                    <dt>Title:
+                    <dd><label>{{ flag['field'] }}</label>
+                    <dt>Flag:
+                    <dd><input type="checkbox" name="" {{ 'checked' if flag['flag'] != 1 }}>
+                {% endfor %}
+                {% endfor %}
+        {% endfor %}
+        <dd><input type="submit" value="Save">
+    </dl>
+</form>

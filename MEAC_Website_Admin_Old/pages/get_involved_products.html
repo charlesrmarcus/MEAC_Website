@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Get Involved Product Donations{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container">
+		
+			<div class="text-center">
+				<br/>
+				<h1>MARKETPLACE DONATIONS<span class="title-under"></span></h1>
+				<br/>
+			</div>
+
+			<p class="page-description">We are currently in need of the following items:</p><br>
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="panel-heading" role="tab" id="headingOne">
+						    <h4 class="panel-title"><span class="fa fa-plus-square-o"></span>  MEAC Marketplace</h4>
+					    </div>
+                    </a>
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							<ul>
+                            {% for element in marketplaceList %}
+								<li>{{ element.text }}</li>
+                            {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title"> <span class="fa fa-plus-square-o"></span>  Clothing</h4>
+                        </div>
+                    </a>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<div class="panel-body">
+							<ul>
+                            {% for element in clothingList %}
+								<li>{{ element.text }}</li>
+                            {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title"><span class="fa fa-plus-square-o"></span>  Miscellaneous Items</h4>
+                        </div>
+                    </a>
+					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+						<div class="panel-body">
+							<ul>
+                            {% for element in miscList %}
+								<li>{{ element.text }}</li>
+                            {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+            <p>You may drop off your donations at our office during business hours OR place any items that are not 
+				temperature sensitive in the blue bin on our office front porch at any time.</p>
+			<p><b>Address:</b> 4600 Erie Avenue, Cincinnati, OH 45227</p>
+			<p><b>Business Hours:</b> Monday-Friday 9 AM - 5 PM</p>
+			<p>If you have questions about marketplace donations please contact us at (513) 271-5501 ext. 16.
+            
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container  -->
+	<div class="push"></div>
+	</div> <!-- /.wrapper || DO NOT MOVE OR CHANGE -->
+{% endblock %}

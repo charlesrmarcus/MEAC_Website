@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Contact{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container fadeIn animated">
+		
+			<div class="text-center">
+				<br/>
+				<h1>CONTACT US<span class="title-under"></span></h1>
+				<br/>
+			</div>
+
+			<div class="section-home nav-box">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box">
+							<h3 class="col-title-col text-center">ADDRESS</h3>
+							<p><a href="https://maps.google.com/maps?ll=39.156381,-84.395303&z=16&t=m&hl=en-US&gl=US&mapclient=embed&daddr=Madisonville%
+							20Education%20and%20Assistance%20Center%20(MEAC)%204600%20Erie%20Ave%20Cincinnati%2C%20OH%2045227@39.1563808,-84.3953026" 
+							target="_blank" title="Get Directions to MEAC">{{ content_dict['address_content'][1] }}</a></p>
+							<p>MEAC is located in Eastminster Presbyterian Church at the corner of Erie Avenue and 
+								Roe Street in Madisonville – a neighborhood in southeastern Cincinnati.</p>
+						</div>
+						<div class="box">
+                            <h3 class="col-title-col text-center">SERVICE HOURS</h3>
+                            {% for element in serviceList %}
+                                <p>{{ element.text }}</p>
+							{% endfor %}
+						</div>
+						
+					</div>
+					<div class="col-md-6">
+						<img src="../static/images/meac_exterior.jpg" class="img-responsive center-block" alt="Photo of MEAC Exterior">
+					</div>
+				</div> <!-- /.row -->
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<h3>PHONE NUMBERS</h3>
+						<table class="table table-style-1">
+					    	<thead>
+					        	<tr>
+					          		<th>Contact</th>
+					          		<th>Phone</th>
+					        	</tr>
+					      	</thead>
+					      	<tbody>
+					        	<tr>
+					          		<td>MEAC Main Office Phone</td>
+					          		<td class="td-phone"><a href="tel:5132715501">(513) 271-5501</a></td>
+					        	</tr>
+								<tr>
+					          		<td>Social Services Programs</td>
+					          		<td class="td-phone">ext. 11</td>
+					        	</tr>
+								<tr>
+					          		<td>Executive Director & Financial Contributions Inquiries</td>
+					          		<td class="td-phone">ext. 12</td>
+					        	</tr>
+								<tr>
+					          		<td>Operations & Volunteering Inquiries</td>
+					          		<td class="td-phone">ext. 13</td>
+					        	</tr>
+					        	<tr>
+					          		<td>MEAC Marketplace</td>
+					          		<td class="td-phone">ext. 15</td>
+					        	</tr>
+								<tr>
+					          		<td>Emergency Assistance Programs & Goods Donations Inquiries</td>
+					          		<td class="td-phone">ext. 16</td>
+					        	</tr>
+								<tr>
+					          		<td>Cincinnati Works</td>
+					          		<td class="td-phone">ext. 20</td>
+					        	</tr>
+								<tr>
+					          		<td>MEAC Fax Number</td>
+					          		<td class="td-phone">(513) 271-4701</td>
+					        	</tr>
+								<tr>
+					          		<td>Ohio Benefit Bank</td>
+					          		<td class="td-phone">(513) 205-4638</td>
+					        	</tr>
+					      	</tbody>
+					   	</table>
+					</div>
+				</div>
+
+			</div> <!-- /.nav-box -->
+		</div> <!-- /.container -->
+	</div> <!-- .main-container -->
+	<div class="push"></div>
+
+{% endblock %}

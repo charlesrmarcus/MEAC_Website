@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- MAIN CONTENT ================================================== -->
+
+	<div class="main-container">
+		<div class="container fadeIn animated">
+
+			<div class="text-center">
+				<br/>
+				<h1>ABOUT US<span class="title-under"></span></h1>
+				<br/>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<br>
+					<img src="{{ url_for('static', filename='images/MEAC Service Area.jpg') }}" alt="" class="img-responsive center-block ">
+					<p class="text-center caption">{{ (content['service_area_content'])['text_content'] }}
+					</p>
+				</div>
+
+				<div class="col-md-6">
+					<h2 class="title-style-2">OUR MISSION<span class="title-under"></span></h2>
+ 					<p>
+ 						{{ (content['mission_content'])['text_content'] }}
+ 					</p>
+
+					<h2 class="title-style-2">WHAT WE DO<span class="title-under"></span></h2>
+					<p>
+						{{ (content['programs_content'])['text_content'] }}
+					</p>
+				</div>
+				
+			</div> <!-- /.row -->
+
+			<div class="section-home nav-box">
+				<hr/> 
+				<br/>
+			    <div class="row">
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-teal">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-newspaper-o" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">Our History</h3>
+			                <div class="col-details">
+			                	<p>{{ (content['history_content'])['text_content'] }}</p>
+			                </div>
+			                <a href="history.html" class="btn btn-nav-box-2"> Read more </a>  
+			            </div> 
+			        </div>
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-green">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-bank" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">Supporters</h3>
+			                <div class="col-details">
+			                    <p>{{ (content['supporters_content'])['text_content'] }}</p>
+			                </div>
+			                <a href="supporters.html" class="btn btn-nav-box-1"> Read more </a>
+			            </div>
+			        </div>
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-teal">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-group" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">Meet the Team</h3>
+			                <div class="col-details">
+			                    <p>{{ (content['meet_the_team_content'])['text_content'] }}  </p>
+			                </div>
+			                <a href="meet_the_team.html" class="btn btn-nav-box-2"> Read more </a>
+			            </div>  
+			        </div>
+
+		            <div class="col-md-3 col-sm-6">		                
+			            <div class="nav-box-col nav-box-green">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-envelope-o" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">Contact</h3>
+			                <div class="col-details">
+			                    <p>{{ (content['contact_content'])['text_content'] }}</p>
+			                </div>
+			                <a href="contact.html" class="btn btn-nav-box-1"> Read more </a>
+			            </div> 
+			        </div>
+
+			    </div> <!-- /.row -->
+			</div> <!-- /.nav-box -->
+			
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container -->
+	<div class="push"></div>
+
+{% endblock %}

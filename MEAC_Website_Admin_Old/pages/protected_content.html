@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Volunteer Portal{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container">
+		
+			<div class="text-center">
+				<br/>
+				<h1>Volunteer Portal<span class="title-under"></span></h1>
+				<br/>
+			</div>
+			
+			<img src="{{ files_dict['volunteer_image'][1] }}" alt="" class="img-responsive center-block">
+
+			<br>
+			<h2>Resources</h2>
+            <ul>
+            {% for file in files %}
+                <li>Download the <a href="{{ file.file_path }}" download="{{ file.display_name }}"><ins>{{ file.display_name }}</ins> <i class="fa fa-file-pdf-o"></i></a> {{ file.description }}</li> 
+            {% endfor %}
+            </ul>
+		</div> <!-- /.container -->
+	</div> <!-- .main-container -->
+	<div class="push"></div>
+	</div> <!-- /.wrapper || DO NOT MOVE OR CHANGE -->
+	
+{% endblock %}

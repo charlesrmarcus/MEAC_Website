@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+
+{% block title %}MEAC | Administrator Login{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="container">
+        </br>
+        <h2>Administrator Login</h2>
+        {% for message in get_flashed_messages() %}
+            <div class="w3-panel w3-red">
+            <h3>{{ message }}</h3>
+            </div>
+        {% endfor %}
+
+        <form action="{{ url_for('login') }}" method="post" align="left">
+        {{ form.csrf_token }}
+        <label class="align">{{ form.username.label }} {{ form.username() }} </label></br>
+        <label class="align">{{ form.password.label }} {{ form.password() }} </label></br>
+        <label class="align">{{ form.remember_me.label }} {{ form.remember_me() }} </label></br><hr> 
+        
+        {{ form.submit() }}
+        
+        
+        <!-- <dl>
+        <dt>Username:
+        <dd><input type="text" name="username">
+        <dt>Password:
+        <dd><input type="password" name="password">
+        insert are you a robot check here
+        <dd><input type="submit" value="Login">
+        </dl>
+        </form> -->
+
+   </div>
+</div>
+<div class="push"></div>
+{% endblock %}
