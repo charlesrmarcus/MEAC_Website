@@ -124,12 +124,38 @@ def populate_GetInvolvedPageText():
 
     db.session.commit()
 
+
 def populate_GetInvolvedVolunteerPageText():
     GetInvolvedVolunteerPageText.query.delete()
 
     content = []
 
     content.append(GetInvolvedVolunteerPageText(field_name="volunteer_contact", text_content="If you have questions about getting involved as a volunteer please contact Carolyn Moseley at (513) 271-5501 ext. 13 or carolyn.mosely@fuse.net.", display_name="Volunteer Contact Information", description="Content about how to get in touch for volunteering"))
+
+    for item in content:
+        db.session.add(item)
+
+    db.session.commit()
+
+
+def populate_OurImpactPageText():
+    OurImpactPageText.query.delete()
+
+    content = []
+
+    content.append(OurImpactPageText(field_name="marketplace_impact_content", text_content="The MEAC Marketplace serves households in the MEAC community (zip codes:  45208, 45209, 45226, 45227) who meet the income guidelines.  MEAC provides emergency food assistance through our Choice Food Pantry which includes additional meat, bread and produce and donated clothing and household items which are new or gently used in our Clothing Shop.  All items are free with the amount available based on the size of the household. The MEAC Marketplace is open on Tuesdays and Thursdays from 9:30am to 3:00pm.", display_name="MEAC Marketplace", description="Who Meac Serves"))
+
+    content.append(OurImpactPageText(field_name="family_literacy_content", text_content="Each month during the school year MEAC hosts a Family Literacy Night at the John P. Parker Elementary School.  It is a fun family event with activities focusing on reading literacy.  Each event has a special theme and next month's theme is Science. Pizza and drinks are provided and the family is invited. Family Literacy Night: April 6 from 5:30 to 7:00 PM. Contact Erin Patterson at erin.patterson@fuse.net", display_name="Family Literacy Night", description=""))
+
+
+    content.append(OurImpactPageText(field_name="", text_content="", display_name="", description=""))
+
+    content.append(OurImpactPageText(field_name="", text_content="", display_name="", description=""))
+
+    content.append(OurImpactPageText(field_name="", text_content="", display_name="", description=""))
+
+    content.append(OurImpactPageText(field_name="", text_content="", display_name="", description=""))
+
 
     for item in content:
         db.session.add(item)
