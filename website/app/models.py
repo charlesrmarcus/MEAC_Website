@@ -96,6 +96,8 @@ class GetHelpPageText(db.Model):
     __tablename__ = 'get_help_page_text'
     id = db.Column(db.Integer, primary_key=True)
     field_name = db.Column(db.Text)
+    display_name = db.Column(db.Text)
+    description = db.Column(db.Text)
     text_content = db.Column(db.Text)
 
 

@@ -158,10 +158,13 @@ family_literacy_content = Content(field='family_literacy_content', display_name=
 
 food_pantry_content = Content(field='food_pantry_content', display_name='Food Pantry', text='3,437')
 food_pantry_content.set_description('Household served in Food Pantry')
+
 clothing_shop_content = Content(field='clothing_shop_content', display_name='Clothing Shop', text='3,212')
 clothing_shop_content.set_description('Households served in the Clothing Shop')
+
 literacy_program_content = Content(field='literacy_program_content', display_name='Family Night Literacy Program', text='342')
 literacy_program_content.set_description('Attended our Family Night Literacy Program')
+
 summer_reading_camp_content = Content(field='summer_reading_camp_content', display_name='Summer Reading Camp Content', text='26')
 summer_reading_camp_content.set_description("K-3rd grade children attended our Summer Reading Camp")
 
@@ -172,10 +175,15 @@ impact_page.setContextEditor(True)
 """Get Help Page"""
 #Content
 service_and_programs_content = Content(field='service_and_programs_content', display_name='Services and Programs', text="Click the tabs below to explore the various services and programs we offer. Please note: an application is required for some services. For your convenience, and to expedite the application process, we've provided some of these documents here for you to fill out before visiting our office.")
+
 contact_1 = Content(field='contact_1', display_name='Early Childhood Literacy Contact Information', text="For more information about Early Childhood Literacy contact Rachel Curry @ rachel.curry@fuse.net")
+
 contact_2 = Content(field='contact_2', display_name='Enhance Your Life Contact Information', text="For more information about Enhance Your Life contact Tonia Griffin or Judy Gillens @ (513) 271-5501 ext 11")
+
 contact_3 = Content(field='contact_3', display_name='Cincinnati Works Contact Information', text="For more information about Cincinnati Works contact Shauntel Dobbins @ (513) 271-5501 ext 20 ")
+
 contact_4 = Content(field='contact_4', display_name='Counseling Contact Information', text="For more information about Counseling contact Tonia Griffin or Judy Gillens @ (513) 271-5501 ext 11")
+
 
 #Assistance Tab
 marketplace = ListItem(field='marketplace', text='food, toiletries, cleaning products, clothing, and household items.')
