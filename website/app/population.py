@@ -234,17 +234,21 @@ def populate_GetHelpPageText():
                                    text_content="Click the tabs below to explore the various services and programs we offer. Please note: an application is required for some services. For your convenience, and to expedite the application process, we've provided some of these documents here for you to fill out before visiting our office.",
                                    display_name="Services and Programs", description=""))
 
-    content.append(GetHelpPageText(field_name="contact_1",
+    content.append(GetHelpPageText(field_name="early_childhood_contact",
                                    text_content="For more information about Early Childhood Literacy contact Rachel Curry @ rachel.curry@fuse.net",
-                                   display_name="Early Childhood Literacy Contact Information", description=""))
+                                   display_name="Early Childhood Literacy Contact Information", description="Contact for early childhood literacy"))
 
-    content.append(GetHelpPageText(field_name="",
-                                   text_content="",
-                                   display_name="", description=""))
+    content.append(GetHelpPageText(field_name="enhance_your_life_contact",
+                                   text_content="For more information about Enhance Your Life contact Tonia Griffin or Judy Gillens @ (513) 271-5501 ext 11",
+                                   display_name="Enhance Your Life Contact Information", description="Contact for enhance your life"))
 
-    content.append(GetHelpPageText(field_name="",
-                                   text_content="",
-                                   display_name="", description=""))
+    content.append(GetHelpPageText(field_name="cincinnati_works_contact",
+                                   text_content="For more information about Cincinnati Works contact Shauntel Dobbins @ (513) 271-5501 ext 20 ",
+                                   display_name="Cincinnati Works Contact Information", description="Contact for Cincinnati Works"))
+
+    content.append(GetHelpPageText(field_name="counseling_contact",
+                                   text_content="For more information about Counseling contact Tonia Griffin or Judy Gillens @ (513) 271-5501 ext 11",
+                                   display_name="Counseling Contact Information", description="Contact for counseling"))
 
     content.append(GetHelpPageText(field_name="",
                                    text_content="",
@@ -254,3 +258,26 @@ def populate_GetHelpPageText():
         db.session.add(item)
 
     db.session.commit()
+
+
+def populate_GetHelpPageAssistanceTabListItem():
+    GetHelpPageAssistanceTabListItem.query.delete()
+
+    content = []
+
+    content.append(GetHelpPageAssistanceTabListItem(field_name="financial_assistance", text_content="pay utility bills, rent, and mortgage, birth certificates, etc.", display_name="", description=""))
+
+    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
+
+    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
+    
+    content.append(GetHelpPageAssistanceTabListItem(field_name="", text_content="", display_name="", description=""))
+
+    for item in content:
+        db.session.add(item)
+
+    db.session.commit()
+
+
+
+
