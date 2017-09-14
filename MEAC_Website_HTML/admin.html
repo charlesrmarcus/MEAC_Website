@@ -1,5 +1,4 @@
 <label>{{ (((data['home'])['entries'])[0])['field'] }}</label>
-
 <form action="{{ url_for('adminPage') }}" method="post" enctype="multipart/form-data">
     <dl>
         {% for page in pages %}
