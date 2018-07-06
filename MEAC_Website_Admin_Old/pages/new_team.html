@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header" align="center">
+    <h1>Team Member Creation</h1>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class="w3-panel w3-green">
+        <h3>{{ message }}</h3>
+</div>
+{% endfor %}
+
+<div class="main-container">
+    <div class="container">
+
+
+        <form method="POST" enctype="multipart/form-data" name="team_form">
+            {{ team_form.csrf_token }}     
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="btn-group-vertical" role="group">
+                        <a href="{{ url_for('admin_splash') }}" class="btn btn-info" role="button">Administrator Portal</a>
+                        <a href="{{ url_for('new_adminFlag') }}" class="btn btn-info" role="button">Emergency Closures</a>
+                        <a href="{{ url_for('new_adminPage') }}" class="btn btn-info" role="button">Page Selection</a>
+                        <a href="{{ url_for('logout') }}" class="btn btn-info" role="button">Logout</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <h3>New Team Member Content</h3>
+                    <p>To create a new team member, fill in all the respective text fields, then click the 'Save' button at the bottom of the column. The green banner will confirm that your changes have been committed.</p>
+
+            <hr>
+            {{ team_form.display_name.label }} <label class="align">{{ team_form.display_name() }} </label></br>
+            <p style="color:red">{{ errorList[1] }}</p></br>
+            {{ team_form.phone_number.label }} <label class="align">{{ team_form.phone_number() }} </label></br>
+            <p style="color:red">{{ errorList[0] }}</p></br>
+            {{ team_form.email.label }} <label class="align">{{ team_form.email() }} </label></br>
+            <p style="color:red">{{ errorList[2] }}</p></br>
+            {{ team_form.description.label }} <label class="align">{{ team_form.description() }} </label></br>
+            <p style="color:red">{{ errorList[4] }}</p></br>
+            {{ team_form.file.label }} <label class="align">{{ team_form.file() }} </label></br>
+            <p style="color:red">{{ errorList[3] }}</p></br>
+            
+            
+            {{ team_form.save_content() }}
+            <hr>
+        </form>
+        <!-- Column --></div>
+        <!-- Row --></div>
+    </div>
+</div>
+<div class="push"></div>
+{% endblock %}

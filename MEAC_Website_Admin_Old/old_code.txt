@@ -1,0 +1,140 @@
+Old Code 
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    """New Security Constraint with Password"""
+    if request.method == 'POST':
+        currentUser = User(request.form['username'], request.form['password'])
+        hashed_password = currentUser.pw_hash
+        if app.config['PASSWORD'] != request.form['password'] or app.config['USERNAME'] != request.form['username']:
+            error = 'Invalid username and password, try again'
+            flash(error)
+        else:
+            session['logged_in'] = True
+            flash('You are logged in')
+            return redirect(url_for('new_adminPage'))
+    return render_template('login.html', error=error)
+    
+    
+"""Update Database Content/Files"""
+        if currentPage_id != None and form.content_field.data != '':
+            current_content = Content.query.filter_by(field=content_field).first()
+            if current_content != None:
+                current_content.field = form.content_field.data
+                current_content.text = form.content_text.data
+                current_content.set_description(form.content_description.data)
+            else:
+                # new_entry = Entries(field=entry_field, header=entry_header, text=entry_text, phone_number=entry_phone_number)
+                # currentPage = Page.query.get(currentPage_id)
+                # currentPage.entries.append(new_entry)
+                flash("You did not enter a correct content_field value, please try again")
+                return redirect(url_for('new_adminContent'))
+            """Database Commit"""
+            db.session.commit()
+            
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title"><span class="fa fa-plus-square-o"></span>  Pages</h4>
+                        </div>
+                    </a>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <ul>
+                            {% for page in pages %}
+                                <li>{{ page.name }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+class NewFileForm(FlaskForm):
+    field = StringField('New File Field : ', validators=[Required()])
+    file = FileField('New File Selection', validators=[Regexp('^.*\.(pdf|docx|jpg|png|jpeg)$'), Optional()])
+    description = TextAreaField('File Description', validators=[Optional()])
+    visibility = BooleanField('Check to make visible', validators=[Optional()])
+    save_file = SubmitField('Save')
+    
+Regexp(regex=r'^[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$')
+Regexp(regex=r'^\b\d{3}[-.]?\d{3}[-.]?\d{4}\b$')
+Regexp(regex=r'^.*\.(pdf|docx|jpg|png|jpeg)$')
+
+<!-- <h3>Welcome to the Administrator Portal<h3>
+        <hr>
+        <p>Click the button to proceed the secured volunteer directory page.</p></br>
+        <form method="GET" action="{{ url_for('populateVolunteerPage') }}">
+            <button type="submit">Volunteer</button>
+        </form>
+        <hr>
+        <p>Click the button to edit content,files, or users visible on the current website.</p></br>
+        <form method="GET" action="{{ url_for('new_adminPage') }}">
+            <button type="submit">Edit Content</button>
+        </form>
+        <hr>
+        <p>Click the button to enable the emergency closure banner.</p></br>
+        <form method="GET" action="{{ url_for('new_adminFlag') }}">
+            <button type="submit">Toggle Banner</button>
+        </form>
+        <hr>
+        <p>Make sure to logout of the Administrator Portal when you are finished with changes to the site.</p></br>
+        <form method="GET" action="{{ url_for('logout') }}">
+            <button type="submit">Logout</button>
+        </form> -->
+        
+        
+        
+<div class="row">
+    <div class="col-md-6">
+        <form method="get" action="{{ url_for('new_adminPage') }}" align="right">
+            <button type="submit">Return to Page Selection</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form method="get" action="{{ url_for('admin_splash') }}" align="left">
+                <button type="submit">Return to Portal</button>
+        </form>
+    </div>
+</div>
+
+{% for element in assistanceList %}
+									<li class="list"><b>{{ element.title }}</b> - {{ element.text }}</li>
+								{% endfor %}	
+                                
+                                
+ {% for element in content %}
+				<article>
+					<div class="inner">
+						<span class="date">
+							<span class="year">{{ element.description }}</span>
+						</span>
+						<h2>{{ element.display_name }}</h2>
+						<p><b>{{ element.title }}</b> - {{ element.text }}</p>
+						
+					</div>
+				</article>
+                {% endfor %}
+                
+                
+<li> <a href="{{ url_for('logout') }}" target="blank"> <i class="fa fa-sign-out"></i></a></li>
+
+<li> <a href="{{ url_for('login') }}" target="blank"> <i class="fa fa-sign-in"></i></a></li>
+
+{% else %}
+    <!-- <div class="w3-panel w3-red banner" hidden>
+        <p>NOTICE: MEAC OFFICES ARE CLOSED TODAY</p>
+    </div> -->
+    <div id="closedAlertDiv" class="navbar-alert" hidden>
+        <div class="container">
+            <div class="row text-center">
+                    <p>NOTICE: MEAC OFFICES ARE CLOSED TODAY</p>
+            </div>
+        </div>
+    </div>
+    
+    
+Download the <a href="{{ files_dict['volunteer_directory_file'][1] }}" download="{{ files_dict['volunteer_directory_file'][0] }}"><ins>{{ files_dict['volunteer_directory_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a> for a list of volunteers and their contact information.

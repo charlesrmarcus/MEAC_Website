@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Get Involved Volunteer{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container">
+		
+			<div class="text-center">
+				<br/>
+				<h1>VOLUNTEER<span class="title-under"></span></h1>
+				<br/>
+			</div>
+
+			<p class="page-description">MEAC has a variety of volunteer opportunities and we'd love your help! These include:</p>
+            <br>
+			<div class="row">
+				<div class="col-md-9">
+				<ul>
+					<li class="list">Marketplace (Shopping/Kitchen)</li>
+					<li class="list">Stocking</li>
+					<li class="list">Food/Donation Pick-up</li>
+					<li class="list">Literacy Program (helping children ages 3-10)</li>
+					<li class="list">Office Assistance</li>
+					<li class="list">Special Events</li>
+				</ul>
+			<br>
+			<p>For more information about these volunteer areas and to see where we are currently in need of volunteers please see the document below:</p>
+			<embed src="{{ files_dict['job_descriptions_file'][1] }}" class="pdf-view" type="application/pdf"><br>
+			Interested in a volunteer position? Great! Download the <a href="{{ files_dict['volunteer_application_file'][1] }}" download="{{ files_dict['volunteer_application_file'][0] }}"><ins>{{ files_dict['volunteer_application_file'][0] }}</ins> <i class="fa fa-file-pdf-o"></i></a> and return it to our office to get started.<br>
+			<br>
+            <p>{{ content_dict['volunteer_contact'][1] }}</p>
+            <br>
+            <p class="page-description">Already a volunteer? Access the Volunteer Portal here:</p>
+			<a href="{{ url_for('volunteer_login') }}" class="btn btn-volunteer">VOLUNTEER PORTAL</a>
+
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container  -->
+	<div class="push"></div>
+
+{% endblock %}

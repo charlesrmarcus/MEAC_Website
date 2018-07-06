@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | About{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container fadeIn animated">
+
+			<div class="text-center">
+				<br/>
+				<h1>ABOUT US<span class="title-under"></span></h1>
+				<br/>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<br>
+					<img src="../static/images/MEAC Service Area.jpg" alt="" class="img-responsive center-block ">
+					<p class="text-center caption">{{ content_dict['service_area_content'][1] }}
+					</p>
+				</div>
+
+				<div class="col-md-6">
+					<h2 class="title-style-2">{{ content_dict['mission_content'][0] }}<span class="title-under"></span></h2>
+ 					<p>
+ 						{{ content_dict['mission_content'][1] }}
+ 					</p>
+
+					<h2 class="title-style-2">{{ content_dict['programs_content'][0] }}<span class="title-under"></span></h2>
+					<p>
+						{{ content_dict['programs_content'][1] }}
+					</p>
+				</div>
+				
+			</div> <!-- /.row -->
+
+			<div class="section-home nav-box">
+				<hr/> 
+				<br/>
+			    <div class="row">
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-teal">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-newspaper-o" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">{{ content_dict['history_content'][0] }}</h3>
+			                <div class="col-details">
+			                	<p>{{ content_dict['history_content'][1] }}</p>  
+			                </div>
+			                <a href="{{ url_for('populateHistoryPage') }}" class="btn btn-nav-box-2"> Read more </a>  
+			            </div> 
+			        </div>
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-green">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-bank" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">{{ content_dict['supporters_content'][0] }}</h3>
+			                <div class="col-details">
+			                    <p>{{ content_dict['supporters_content'][1] }}</p>
+			                </div>
+			                <a href="{{ url_for('populateSupportersPage') }}" class="btn btn-nav-box-1"> Read more </a>
+			            </div>
+			        </div>
+
+			        <div class="col-md-3 col-sm-6">
+			            <div class="nav-box-col nav-box-teal">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-group" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">{{ content_dict['meet_the_team_content'][0] }}</h3>
+			                <div class="col-details">
+			                    <p>{{ content_dict['meet_the_team_content'][1] }}</p>  
+			                </div>
+			                <a href="{{ url_for('populateMeetTheTeamPage') }}" class="btn btn-nav-box-2"> Read more </a>
+			            </div>  
+			        </div>
+
+		            <div class="col-md-3 col-sm-6">		                
+			            <div class="nav-box-col nav-box-green">
+			                <div class="col-icon-wrapper">
+								<i class="fa fa-envelope-o" style="font-size:72px;color:white"></i>
+			                </div>
+			                <h3 class="col-title">{{ content_dict['contact_content'][0] }}</h3>
+			                <div class="col-details">
+			                    <p>{{ content_dict['contact_content'][1] }}</p> 
+			                </div>
+			                <a href="{{ url_for('populateContactPage') }}" class="btn btn-nav-box-1"> Read more </a>
+			            </div> 
+			        </div>
+
+			    </div> <!-- /.row -->
+			</div> <!-- /.nav-box -->
+			
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container -->
+	<div class="push"></div>
+{% endblock %}

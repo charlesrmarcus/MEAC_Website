@@ -1,0 +1,32 @@
+@app.route('/add_history', methods=['GET', 'POST'])
+@login_required
+def add_history():
+    new_content_form = NewHistoryForm()
+    delete_form = SelectDeleteForm()
+    content = Content.query.filter_by(page_id=currentPage_id).all()
+    delete_choices = []
+    for element in content:
+            delete_pair = (element.field, element.title)
+            delete_choices.append(delete_pair)
+    delete_form.field.choices = delete_choices    
+
+    if new_content_form.validate_on_submit() and new_content_form.save_content.data:
+        new_content = Content(field='new_content', display_name=new_content_form.display_name.data, text=new_content_form.text.data)
+        new_content.set_description(new_content_form.description.data)
+        new_content.set_title(new_content_form.title.data)
+        currentPage = Page.query.get(currentPage_id)
+        currentPage.content.append(new_content)
+      
+        """Database Commit"""
+        flash('Your changes were saved!')
+        db.session.commit()
+        return redirect(url_for('add_history'))
+        
+    if delete_form.is_submitted() and delete_form.delete.data:
+        current_list = ListItem.query.filter_by(field=delete_form.field.data).first()
+        db.session.delete(current_list)
+        flash('Your changes were saved!')
+        db.session.commit()
+        return redirect(url_for('add_history'))
+    
+    return render_template('add_history.html', new_content_form=new_content_form, delete_form=delete_form)

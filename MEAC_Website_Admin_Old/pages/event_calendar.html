@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}MEAC | Event Calendar{% endblock %}
+
+{% block style %}
+    <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="main-container">
+		<div class="container">
+		
+			<div class="text-center">
+				<br/>
+				<h1>EVENT CALENDAR<span class="title-under"></span></h1>
+				<br/>
+			</div>
+			<br/>
+			<div data-tockify-component="calendar" data-tockify-calendar="meac.cincinnati"></div>
+			<br/>
+			<br/>
+		</div> <!-- /.container -->
+	</div> <!-- /.main-container  -->
+	<div class="push"></div>
+{% endblock %}
